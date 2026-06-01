@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinmay's Portfolio | Web Technology & Software Engineering</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#home" class="brand-logo">Chinmay's Portfolio</a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#intro" class="nav-link" data-page="intro">Introduction</a></li>
+                    <li><a href="#course-overview" class="nav-link" data-page="course-overview">Course Overview</a></li>
+                    
+                    <!-- Learning Dropdown -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="learningDropdown">Learning <i data-lucide="chevron-down" class="nav-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#learning-html" class="nav-dropdown-link" data-page="learning-html">HTML</a></li>
+                            <li><a href="#learning-css" class="nav-dropdown-link" data-page="learning-css">CSS</a></li>
+                            <li><a href="#learning-js" class="nav-dropdown-link" data-page="learning-js">JavaScript</a></li>
+                            <li><a href="#learning-node" class="nav-dropdown-link" data-page="learning-node">Node.js</a></li>
+                            <li><a href="#learning-react" class="nav-dropdown-link" data-page="learning-react">React.js</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#skills" class="nav-link" data-page="skills">Skills</a></li>
+                    
+                    <!-- Project Dropdown -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="projectDropdown">Project <i data-lucide="chevron-down" class="nav-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#project-overview" class="nav-dropdown-link" data-page="project-overview">Project Overview</a></li>
+                            <li><a href="#project-timeline" class="nav-dropdown-link" data-page="project-timeline">Agile Timeline</a></li>
+                            <li><a href="#project-architecture" class="nav-dropdown-link" data-page="project-architecture">System Architecture</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#devops" class="nav-link" data-page="devops">DevOps Certification</a></li>
+                    <li><a href="#reflections" class="nav-link" data-page="reflections">Reflections</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="search-btn" id="openSearch" aria-label="Search portfolio">
+                    <i data-lucide="search"></i>
+                </button>
+                <button class="burger-menu" id="burgerMenuBtn" aria-label="Open navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-modal">
+            <div class="search-header">
+                <i data-lucide="search" class="search-icon-active"></i>
+                <input type="text" id="searchInput" placeholder="Search sections, technologies, or keywords..." autocomplete="off">
+                <button class="close-search-btn" id="closeSearch">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="search-results-wrapper">
+                <ul class="search-results-list" id="searchResultsList">
+                    <!-- Results populated dynamically by JS -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Views Container -->
+    <main class="main-content">
+        
+        <!-- Page A: Home -->
+        <section id="home" class="page-section active">
+            <div class="hero-section">
+                <div class="hero-container">
+                    <h1 class="hero-tagline animate-text">PORTFOLIO</h1>
+                    <h2 class="hero-title animate-text">WEB TECHNOLOGY</h2>
+                    <span class="hero-amp">&</span>
+                    <h2 class="hero-subtitle animate-text">SOFTWARE ENGINEERING</h2>
+                </div>
+            </div>
+
+            <div class="home-grid container">
+                <!-- Student Profile Card -->
+                <div class="student-profile-card">
+                    <div class="card-glow-layer"></div>
+                    <div class="profile-header">
+                        <i data-lucide="user" class="profile-icon"></i>
+                        <h3>Student Credentials</h3>
+                    </div>
+                    <div class="profile-info-grid">
+                        <div class="info-row">
+                            <span class="info-label">Name</span>
+                            <span class="info-val highlight-cyan">Chinmay</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Department</span>
+                            <span class="info-val">Computer Science & Engineering</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Semester</span>
+                            <span class="info-val highlight-purple">VI Semester</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">USN</span>
+                            <span class="info-val font-mono text-cyan">1KL23CS045</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Overview Grid -->
+                <div class="course-cards-row">
+                    <div class="course-glow-card">
+                        <div class="card-inner">
+                            <div class="course-badge purple">CSE-304</div>
+                            <h4>Course 1: Web Technologies</h4>
+                            <p>Deep-dive into frontend architectures, semantic structures, asynchronous script execution, backend modules, and RESTful routing configurations.</p>
+                            <a href="#course-overview" class="learn-more-link">View Course details <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="course-glow-card">
+                        <div class="card-inner">
+                            <div class="course-badge cyan">CSE-306</div>
+                            <h4>Course 2: Software Engineering</h4>
+                            <p>Focuses on systems analysis, Agile development cycles, sprint workflows, database integration, architectural modeling, and deployment pipelines.</p>
+                            <a href="#course-overview" class="learn-more-link">View Course details <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page B: Introduction -->
+        <section id="intro" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">INTRODUCTION</h2>
+                    <p class="section-subtext">Brief overview of my background, path, and specialized technical focuses.</p>
+                </div>
+
+                <div class="intro-flex-layout">
+                    <!-- Left: Profile portrait -->
+                    <div class="profile-portrait-frame">
+                        <div class="portrait-box">
+                            <div class="portrait-avatar-placeholder">
+                                <div class="avatar-pulse-circle"></div>
+                                <i data-lucide="terminal" class="avatar-icon"></i>
+                                <span class="avatar-signature">&lt;CHINMAY /&gt;</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Dedicated, dark "About Me" box -->
+                    <div class="about-me-box">
+                        <div class="about-tags-row">
+                            <span class="badge-chip">Student</span>
+                            <span class="badge-chip secondary">Web Developer</span>
+                            <span class="badge-chip tertiary">Tech Enthusiast</span>
+                        </div>
+                        <h3>About Me</h3>
+                        <p class="bio-paragraph">
+                            I am a Computer Science & Engineering student passionate about crafting sleek, performant, and premium web architectures. Through my coursework at KLE Technological University, I have acquired both a logical backend mindset and an aesthetic eye for visual layout execution.
+                        </p>
+                        <p class="bio-paragraph">
+                            My focus centers on responsive SPA framework implementations, clean routing, REST API structures, and Agile team workflows. I continuously challenge myself with DevOps methodologies, container deployment configurations, and responsive mobile interfaces.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills Overview -->
+                <div class="tech-overview-title">
+                    <h4>Technical Competency Zones</h4>
+                </div>
+                <div class="three-column-grid">
+                    <div class="tech-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="layout" class="tech-icon-front"></i>
+                            <h5>Frontend Development</h5>
+                        </div>
+                        <ul class="tech-list">
+                            <li>HTML5 Semantic Structuring</li>
+                            <li>CSS3 Flexbox & Grid Systems</li>
+                            <li>Modern JavaScript (ES6+ / Async)</li>
+                            <li>React.js Components & Hooks</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="server" class="tech-icon-back"></i>
+                            <h5>Backend Development</h5>
+                        </div>
+                        <ul class="tech-list">
+                            <li>Node.js Server Runtime</li>
+                            <li>Express.js REST Routing</li>
+                            <li>Authentication & Session Security</li>
+                            <li>RESTful API Endpoints</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-card-header">
+                            <i data-lucide="database" class="tech-icon-db"></i>
+                            <h5>Database & Tools</h5>
+                        </div>
+                        <ul class="tech-list">
+                            <li>MongoDB Atlas (NoSQL)</li>
+                            <li>MySQL (Relational Databases)</li>
+                            <li>Git Version Control Systems</li>
+                            <li>VS Code Extension Tooling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page C: Course Overview -->
+        <section id="course-overview" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">COURSE OVERVIEW</h2>
+                    <p class="section-subtext">Comprehensive curriculum objectives and structures for core semester disciplines.</p>
+                </div>
+
+                <div class="course-deep-dive">
+                    <!-- Web Technology Block -->
+                    <div class="course-detail-section">
+                        <div class="detail-header-row">
+                            <div class="detail-logo purple-shadow">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <h3>Course: Web Technologies</h3>
+                        </div>
+                        
+                        <div class="detail-content-card">
+                            <h5>Course Introduction</h5>
+                            <p>
+                                Web Technologies provides an extensive immersion into standard protocols, document rendering mechanisms, client-side scripts, and backend architectures. The coursework focuses on developing standard-compliant web pages using semantic markups, CSS design systems, dynamic asynchronous scripts, and modern reactive libraries like React.js alongside server-side stacks.
+                            </p>
+                            
+                            <h5>Course Objectives</h5>
+                            <ul class="horizontal-bullet-list">
+                                <li>
+                                    <div class="bullet-num">01</div>
+                                    <div class="bullet-desc"><strong>Semantic Standards</strong>: Structure information semantically with modern HTML5.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">02</div>
+                                    <div class="bullet-desc"><strong>Responsive Styling</strong>: Establish flexible layout grids and layouts using CSS3 Flexbox.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">03</div>
+                                    <div class="bullet-desc"><strong>Dynamic Scripts</strong>: Manipulate document trees asynchronously via JavaScript DOM.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">04</div>
+                                    <div class="bullet-desc"><strong>Backend Operations</strong>: Implement full-stack models with Node.js servers.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Software Engineering Block -->
+                    <div class="course-detail-section">
+                        <div class="detail-header-row">
+                            <div class="detail-logo cyan-shadow">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h3>Course: Software Engineering</h3>
+                        </div>
+                        
+                        <div class="detail-content-card">
+                            <h5>Course Introduction</h5>
+                            <p>
+                                Software Engineering examines the lifecycle models, systematic methodologies, operational charts, and validation strategies needed to formulate scale-ready software platforms. It establishes the foundations of Agile sprint planning, structural design analysis (including UML class/use-case modeling), target-user mappings, system architecture formulation, and modern DevOps automated pipelines.
+                            </p>
+                            
+                            <h5>Course Objectives</h5>
+                            <ul class="horizontal-bullet-list">
+                                <li>
+                                    <div class="bullet-num">01</div>
+                                    <div class="bullet-desc"><strong>Agile Lifecycles</strong>: Run project milestones inside structured Sprint schedules.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">02</div>
+                                    <div class="bullet-desc"><strong>Architectural Modeling</strong>: Represent modules visually using UML state flow designs.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">03</div>
+                                    <div class="bullet-desc"><strong>User Mappings</strong>: Structure target demographics through User Stories.</div>
+                                </li>
+                                <li>
+                                    <div class="bullet-num">04</div>
+                                    <div class="bullet-desc"><strong>Verification Testing</strong>: Implement functional validation strategies.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page D: Learning Modules (Dynamic sub-pages per selection) -->
+        
+        <!-- Learning: HTML -->
+        <section id="learning-html" class="page-section">
+            <div class="container">
+                <div class="learning-header-block">
+                    <h2 class="tech-title-giant html-glow">HTML5 STRUCTURES</h2>
+                    <span class="category-pill-tag">ASSIGNMENT 01 - EVALUATION 1</span>
+                </div>
+
+                <div class="learning-intro-card">
+                    <h4>Overview: Semantic Architecture & Tag Hierarchy</h4>
+                    <p>
+                        This module covers the core specifications of the HTML5 standard, emphasizing document layout semantics, accessibility standards (ARIA), media embedding, and metadata organization. The goal is to build accessible document trees that provide complete structures for CSS styling engines and search engine crawlers.
+                    </p>
+                </div>
+
+                <!-- Key Features Row -->
+                <div class="key-features-row">
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Semantic tags</h6>
+                        <p>Leveraging <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;article&gt;</code> for outline integrity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>SEO Setup</h6>
+                        <p>Configuring meta viewports, social tags, and descriptions for index accessibility.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Accessibility</h6>
+                        <p>Structuring form labels, image alt descriptions, and page regions for readers.</p>
+                    </div>
+                </div>
+
+                <!-- Personal Reflection Quote Card -->
+                <div class="reflection-quote-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <blockquote>
+                        Semantic markup forms the skeleton of high-performance web development. Without semantic structures, styling and scripting lack foundation, degrading SEO score and accessibility.
+                    </blockquote>
+                    <cite>- Learning Reflection</cite>
+                </div>
+
+                <!-- Code Container & Wireframe Split -->
+                <div class="code-output-split">
+                    <!-- Left: Code tab view -->
+                    <div class="code-container-widget">
+                        <div class="code-header-bar">
+                            <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> index.html</span>
+                            <div class="tab-controls">
+                                <button class="code-tab-btn active" data-file="index-html">index.html</button>
+                                <button class="code-tab-btn" data-file="layout-html">layout.html</button>
+                            </div>
+                        </div>
+                        <div class="code-content-wrapper">
+                            <pre id="code-index-html" class="code-pre active"><code><span class="code-tag">&lt;!DOCTYPE <span class="code-attr">html</span>&gt;</span>
+<span class="code-tag">&lt;html <span class="code-attr">lang</span>=<span class="code-string">"en"</span>&gt;</span>
+<span class="code-tag">&lt;head&gt;</span>
+  <span class="code-tag">&lt;meta <span class="code-attr">charset</span>=<span class="code-string">"UTF-8"</span>&gt;</span>
+  <span class="code-tag">&lt;title&gt;</span>Semantic Markup Demo<span class="code-tag">&lt;/title&gt;</span>
+<span class="code-tag">&lt;/head&gt;</span>
+<span class="code-tag">&lt;body&gt;</span>
+  <span class="code-tag">&lt;header&gt;</span>
+    <span class="code-tag">&lt;h1&gt;</span>Web Architecture<span class="code-tag">&lt;/h1&gt;</span>
+    <span class="code-tag">&lt;nav&gt;</span>
+      <span class="code-tag">&lt;a <span class="code-attr">href</span>=<span class="code-string">"#details"</span>&gt;</span>Details<span class="code-tag">&lt;/a&gt;</span>
+    <span class="code-nav">&lt;/nav&gt;</span>
+  <span class="code-tag">&lt;/header&gt;</span>
+  <span class="code-tag">&lt;main&gt;</span>
+    <span class="code-tag">&lt;section <span class="code-attr">id</span>=<span class="code-string">"details"</span>&gt;</span>
+      <span class="code-tag">&lt;h2&gt;</span>Module 1 Core Concepts<span class="code-tag">&lt;/h2&gt;</span>
+      <span class="code-tag">&lt;p&gt;</span>HTML5 anchors structural schemas.<span class="code-tag">&lt;/p&gt;</span>
+    <span class="code-tag">&lt;/section&gt;</span>
+  <span class="code-tag">&lt;/main&gt;</span>
+<span class="code-tag">&lt;/body&gt;</span>
+<span class="code-tag">&lt;/html&gt;</span></code></pre>
+                            <pre id="code-layout-html" class="code-pre"><code><span class="code-tag">&lt;section <span class="code-attr">class</span>=<span class="code-string">"layout-grid"</span>&gt;</span>
+  <span class="code-tag">&lt;article <span class="code-attr">class</span>=<span class="code-string">"card"</span>&gt;</span>
+    <span class="code-tag">&lt;header&gt;</span>
+      <span class="code-tag">&lt;h3&gt;</span>Article Header Title<span class="code-tag">&lt;/h3&gt;</span>
+    <span class="code-tag">&lt;/header&gt;</span>
+    <span class="code-tag">&lt;p&gt;</span>This represents modular card component layout structure.<span class="code-tag">&lt;/p&gt;</span>
+    <span class="code-tag">&lt;footer&gt;</span>
+      <span class="code-tag">&lt;small&gt;</span>Category: Grid Modules<span class="code-tag">&lt;/small&gt;</span>
+    <span class="code-tag">&lt;/footer&gt;</span>
+  <span class="code-tag">&lt;/article&gt;</span>
+<span class="code-tag">&lt;/section&gt;</span></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Right: UI Wireframe / Preview -->
+                    <div class="wireframe-container">
+                        <div class="wireframe-header">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="wireframe-title font-mono">Render Output View</span>
+                        </div>
+                        <div class="wireframe-canvas">
+                            <div class="mock-browser-nav">
+                                <span class="mock-nav-title">Web Architecture</span>
+                                <div class="mock-nav-links">
+                                    <span class="mock-link active">Details</span>
+                                </div>
+                            </div>
+                            <div class="mock-browser-body">
+                                <h3>Module 1 Core Concepts</h3>
+                                <p class="mock-desc">HTML5 anchors structural schemas. Inside a standard DOM, semantic tags provide a logical hierarchy for search crawl tools and accessibility interfaces.</p>
+                                <div class="mock-card">
+                                    <div class="mock-card-head">Article Header Title</div>
+                                    <p>This represents modular card component layout structure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning: CSS -->
+        <section id="learning-css" class="page-section">
+            <div class="container">
+                <div class="learning-header-block">
+                    <h2 class="tech-title-giant css-glow">CSS3 LAYOUTS</h2>
+                    <span class="category-pill-tag">ASSIGNMENT 02 - EVALUATION 1</span>
+                </div>
+
+                <div class="learning-intro-card">
+                    <h4>Overview: Flexbox, Grid, & Modern Custom Styling System</h4>
+                    <p>
+                        This module targets advanced styling patterns. Topics include custom properties (variables), media query thresholds, layout engines (CSS Flexbox and CSS Grid), stacking contexts, animations via keyframes, and transitions. The focus is to formulate smooth user flows with scalable layouts.
+                    </p>
+                </div>
+
+                <div class="key-features-row">
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>CSS Grid Areas</h6>
+                        <p>Constructing multi-directional grids without nesting extra elements.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Flexbox Aligns</h6>
+                        <p>Precise align-items, justify-content settings for components scaling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Neon Glow FX</h6>
+                        <p>Box shadow layers with rgba variables for ambient aesthetic rendering.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-quote-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <blockquote>
+                        Modern CSS transitions style structural grids into premium user interfaces. Implementing modular stylesheets avoids custom class nesting, maximizing browser performance.
+                    </blockquote>
+                    <cite>- Learning Reflection</cite>
+                </div>
+
+                <div class="code-output-split">
+                    <div class="code-container-widget">
+                        <div class="code-header-bar">
+                            <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> style.css</span>
+                            <div class="tab-controls">
+                                <button class="code-tab-btn active" data-file="style-css">style.css</button>
+                                <button class="code-tab-btn" data-file="grid-css">grid.css</button>
+                            </div>
+                        </div>
+                        <div class="code-content-wrapper">
+                            <pre id="code-style-css" class="code-pre active"><code><span class="code-tag">:root</span> {
+  <span class="code-attr">--neon-glow</span>: <span class="code-string">0 0 15px rgba(167, 139, 250, 0.4)</span>;
+  <span class="code-attr">--card-color</span>: <span class="code-string">#111827</span>;
+}
+
+<span class="code-tag">.neon-card</span> {
+  <span class="code-attr">background</span>: <span class="code-tag">var</span>(--card-color);
+  <span class="code-attr">border</span>: <span class="code-string">1px solid rgba(167, 139, 250, 0.2)</span>;
+  <span class="code-attr">box-shadow</span>: <span class="code-tag">var</span>(--neon-glow);
+  <span class="code-attr">transition</span>: <span class="code-string">all 0.3s ease-in-out</span>;
+}
+
+<span class="code-tag">.neon-card:hover</span> {
+  <span class="code-attr">transform</span>: <span class="code-string">translateY(-5px)</span>;
+  <span class="code-attr">border-color</span>: <span class="code-string">#a78bfa</span>;
+}</code></pre>
+                            <pre id="code-grid-css" class="code-pre"><code><span class="code-tag">.responsive-grid</span> {
+  <span class="code-attr">display</span>: <span class="code-string">grid</span>;
+  <span class="code-attr">grid-template-columns</span>: <span class="code-string">repeat(auto-fit, minmax(280px, 1fr))</span>;
+  <span class="code-attr">gap</span>: <span class="code-string">20px</span>;
+  <span class="code-attr">align-items</span>: <span class="code-string">stretch</span>;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="wireframe-container">
+                        <div class="wireframe-header">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="wireframe-title font-mono">Render Output View</span>
+                        </div>
+                        <div class="wireframe-canvas grid-canvas">
+                            <div class="mock-grid-item glow-active">
+                                <div class="dot-indicator"></div>
+                                <span class="mock-title">Active Glow</span>
+                                <p>Hover transforms activated with -5px offset translateY.</p>
+                            </div>
+                            <div class="mock-grid-item">
+                                <div class="dot-indicator inactive"></div>
+                                <span class="mock-title">Standard State</span>
+                                <p>Clean border outline with low opacity border values.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning: JavaScript -->
+        <section id="learning-js" class="page-section">
+            <div class="container">
+                <div class="learning-header-block">
+                    <h2 class="tech-title-giant js-glow">JAVASCRIPT ES6+</h2>
+                    <span class="category-pill-tag">ASSIGNMENT 03 - EVALUATION 2</span>
+                </div>
+
+                <div class="learning-intro-card">
+                    <h4>Overview: Asynchronous Operations, DOM API, & Events</h4>
+                    <p>
+                        This module targets deep JavaScript language concepts, covering promises, async/await constructs, event bubbling workflows, array filters, local storage storage cache keys, and standard browser DOM manipulations. The goal is to build dynamic client-side interactions on top of raw HTML layouts.
+                    </p>
+                </div>
+
+                <div class="key-features-row">
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Async Fetches</h6>
+                        <p>Handling API payload data processes using the Promise structures.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>DOM Manipulation</h6>
+                        <p>Modifying node content properties dynamically in response to user inputs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Event Delegation</h6>
+                        <p>Setting single event listeners on parent elements for optimal memory use.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-quote-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <blockquote>
+                        JavaScript breathes life into web layouts. Event tracking systems and dynamic layout switching create immersive application experiences.
+                    </blockquote>
+                    <cite>- Learning Reflection</cite>
+                </div>
+
+                <div class="code-output-split">
+                    <div class="code-container-widget">
+                        <div class="code-header-bar">
+                            <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> app.js</span>
+                            <div class="tab-controls">
+                                <button class="code-tab-btn active" data-file="app-js">app.js</button>
+                                <button class="code-tab-btn" data-file="fetch-js">fetch.js</button>
+                            </div>
+                        </div>
+                        <div class="code-content-wrapper">
+                            <pre id="code-app-js" class="code-pre active"><code><span class="code-tag">const</span> fetchButton = document.querySelector(<span class="code-string">'#getData'</span>);
+
+fetchButton.addEventListener(<span class="code-string">'click'</span>, <span class="code-tag">async</span> () => {
+  <span class="code-tag">try</span> {
+    <span class="code-tag">const</span> data = <span class="code-tag">await</span> loadData(<span class="code-string">'/api/user'</span>);
+    renderWidget(data);
+  } <span class="code-tag">catch</span>(err) {
+    console.error(<span class="code-string">"Failed fetching profile"</span>, err);
+  }
+});</code></pre>
+                            <pre id="code-fetch-js" class="code-pre"><code><span class="code-tag">async function</span> loadData(endpoint) {
+  <span class="code-tag">const</span> res = <span class="code-tag">await</span> fetch(endpoint);
+  <span class="code-tag">if</span> (!res.ok) <span class="code-tag">throw new Error</span>(<span class="code-string">"Network response failed"</span>);
+  <span class="code-tag">return await</span> res.json();
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="wireframe-container">
+                        <div class="wireframe-header">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="wireframe-title font-mono">Render Output View</span>
+                        </div>
+                        <div class="wireframe-canvas js-canvas">
+                            <button class="mock-action-btn" id="demoFetchBtn">Trigger Data Load</button>
+                            <div class="mock-status-box" id="demoStatusBox">
+                                <div class="status-marker idle"></div>
+                                <span class="status-label">Engine Ready</span>
+                            </div>
+                            <div class="mock-data-display" id="demoDataDisplay">
+                                <p class="placeholder-text">Click the action button to simulate AJAX load workflow...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning: Node.js -->
+        <section id="learning-node" class="page-section">
+            <div class="container">
+                <div class="learning-header-block">
+                    <h2 class="tech-title-giant node-glow">NODE.JS RUNTIME</h2>
+                    <span class="category-pill-tag">ASSIGNMENT 04 - EVALUATION 2</span>
+                </div>
+
+                <div class="learning-intro-card">
+                    <h4>Overview: Backend Services & API Implementations</h4>
+                    <p>
+                        This module targets backend logic execution, handling modules import structures, HTTP headers configurations, filesystem operations, Express.js server logic, and secure database connections. The goal is to construct structural services that power modern single page applications.
+                    </p>
+                </div>
+
+                <div class="key-features-row">
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>REST Routers</h6>
+                        <p>Handling POST, GET, PUT, and DELETE queries using clean endpoints.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>JSON Web Tokens</h6>
+                        <p>Validating API access client keys inside authorization header variables.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>FS Module Integration</h6>
+                        <p>Parsing raw metadata profiles stored inside localized settings data.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-quote-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <blockquote>
+                        Node.js unifies frontend layouts with secure server layers. Working with Express.js routing structures helps organize large-scale API endpoints.
+                    </blockquote>
+                    <cite>- Learning Reflection</cite>
+                </div>
+
+                <div class="code-output-split">
+                    <div class="code-container-widget">
+                        <div class="code-header-bar">
+                            <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> server.js</span>
+                            <div class="tab-controls">
+                                <button class="code-tab-btn active" data-file="server-js">server.js</button>
+                                <button class="code-tab-btn" data-file="router-js">router.js</button>
+                            </div>
+                        </div>
+                        <div class="code-content-wrapper">
+                            <pre id="code-server-js" class="code-pre active"><code><span class="code-tag">const</span> express = require(<span class="code-string">'express'</span>);
+<span class="code-tag">const</span> app = express();
+<span class="code-tag">const</span> PORT = <span class="code-string">3000</span>;
+
+app.use(express.json());
+
+app.get(<span class="code-string">'/api/health'</span>, (req, res) => {
+  res.status(<span class="code-string">200</span>).json({ status: <span class="code-string">'active'</span> });
+});
+
+app.listen(PORT, () => {
+  console.log(<span class="code-string">`Server active on port ${PORT}`</span>);
+});</code></pre>
+                            <pre id="code-router-js" class="code-pre"><code><span class="code-tag">const</span> express = require(<span class="code-string">'express'</span>);
+<span class="code-tag">const</span> router = express.Router();
+
+router.post(<span class="code-string">'/users'</span>, (req, res) => {
+  <span class="code-tag">const</span> newUser = req.body;
+  res.status(<span class="code-string">201</span>).json({ success: <span class="code-string">true</span>, data: newUser });
+});
+
+module.exports = router;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="wireframe-container">
+                        <div class="wireframe-header">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="wireframe-title font-mono">Server Output Terminal</span>
+                        </div>
+                        <div class="wireframe-canvas terminal-canvas">
+                            <div class="terminal-line"><span class="term-prompt">$</span> npm run start</div>
+                            <div class="terminal-line success"><span class="term-status">[OK]</span> Starting ChinmayServer environment...</div>
+                            <div class="terminal-line success"><span class="term-status">[OK]</span> Server active on port 3000</div>
+                            <div class="terminal-line log"><span class="term-timestamp">[21:30:15]</span> GET /api/health - 200 OK</div>
+                            <div class="terminal-line log"><span class="term-timestamp">[21:30:18]</span> POST /api/users - 201 Created</div>
+                            <div class="terminal-cursor"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning: React.js -->
+        <section id="learning-react" class="page-section">
+            <div class="container">
+                <div class="learning-header-block">
+                    <h2 class="tech-title-giant react-glow">REACT.JS SPA</h2>
+                    <span class="category-pill-tag">ASSIGNMENT 05 - EVALUATION 3</span>
+                </div>
+
+                <div class="learning-intro-card">
+                    <h4>Overview: Component Trees, Hooks, & State Cycles</h4>
+                    <p>
+                        This module targets modular single page construction, covering JSX templating, useState and useEffect operations, functional components, parent-child props flow, and centralized state management. The focus is to formulate fast, dynamic, and clean frontend UI nodes.
+                    </p>
+                </div>
+
+                <div class="key-features-row">
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>State Management</h6>
+                        <p>Syncing input fields and dynamic filters using state values.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Effect Hooks</h6>
+                        <p>Handling subscription listeners and APIs data load on component mounts.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i data-lucide="check-circle-2" class="feature-icon"></i>
+                        <h6>Virtual DOM</h6>
+                        <p>Rerendering single elements selectively to bypass structural layout reflows.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-quote-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <blockquote>
+                        React components break complex layouts into reusable blocks. Controlling component render cycles and virtual DOM updates optimizes page responsive speed.
+                    </blockquote>
+                    <cite>- Learning Reflection</cite>
+                </div>
+
+                <div class="code-output-split">
+                    <div class="code-container-widget">
+                        <div class="code-header-bar">
+                            <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> counter.jsx</span>
+                            <div class="tab-controls">
+                                <button class="code-tab-btn active" data-file="counter-jsx">Counter.jsx</button>
+                                <button class="code-tab-btn" data-file="app-jsx">App.jsx</button>
+                            </div>
+                        </div>
+                        <div class="code-content-wrapper">
+                            <pre id="code-counter-jsx" class="code-pre active"><code><span class="code-tag">import</span> React, { useState } <span class="code-tag">from</span> <span class="code-string">'react'</span>;
+
+<span class="code-tag">export default function</span> Counter() {
+  <span class="code-tag">const</span> [val, setVal] = useState(<span class="code-string">0</span>);
+
+  <span class="code-tag">return</span> (
+    <span class="code-tag">&lt;div <span class="code-attr">className</span>=<span class="code-string">"react-card"</span>&gt;</span>
+      <span class="code-tag">&lt;p&gt;</span>Value: {val}<span class="code-tag">&lt;/p&gt;</span>
+      <span class="code-tag">&lt;button <span class="code-attr">onClick</span>={() => setVal(val + <span class="code-string">1</span>)}&gt;</span>
+        Increment
+      <span class="code-tag">&lt;/button&gt;</span>
+    <span class="code-tag">&lt;/div&gt;</span>
+  );
+}</code></pre>
+                            <pre id="code-app-jsx" class="code-pre"><code><span class="code-tag">import</span> React <span class="code-tag">from</span> <span class="code-string">'react'</span>;
+<span class="code-tag">import</span> Counter <span class="code-tag">from</span> <span class="code-string">'./Counter'</span>;
+
+<span class="code-tag">export default function</span> App() {
+  <span class="code-tag">return</span> (
+    <span class="code-tag">&lt;main&gt;</span>
+      <span class="code-tag">&lt;h1&gt;</span>React Component App<span class="code-tag">&lt;/h1&gt;</span>
+      <span class="code-tag">&lt;Counter /&gt;</span>
+    <span class="code-tag">&lt;/main&gt;</span>
+  );
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="wireframe-container">
+                        <div class="wireframe-header">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="wireframe-title font-mono">Render Output View</span>
+                        </div>
+                        <div class="wireframe-canvas react-canvas">
+                            <div class="mock-react-panel">
+                                <span class="react-tag-indicator">React Root DOM</span>
+                                <h5>React Component App</h5>
+                                <div class="mock-react-card">
+                                    <p>Value: <span id="react-counter-val" class="count-value highlight-purple">0</span></p>
+                                    <button class="mock-action-btn" id="reactDemoBtn">Increment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page E: Skills -->
+        <section id="skills" class="page-section">
+            <div class="container">
+                <div class="skills-hero-banner">
+                    <div class="skills-banner-overlay"></div>
+                    <div class="skills-banner-content">
+                        <h2 class="giant-header-text">TECHNICAL SKILLS</h2>
+                        <p class="section-subtext">Proficiency levels, tag sets, and specialized competencies mapped in detail.</p>
+                    </div>
+                </div>
+
+                <div class="skills-categories-grid">
+                    
+                    <!-- Programming Languages -->
+                    <div class="skill-category-block">
+                        <div class="category-title-bar">
+                            <i data-lucide="code-2" class="category-icon text-purple"></i>
+                            <h4>Programming Languages</h4>
+                        </div>
+                        <div class="skill-cards-stack">
+                            
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">JavaScript (ES6+)</span>
+                                    <span class="skill-level-badge advanced">ADVANCED</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="90%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">90%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">Async/Await</span>
+                                        <span class="sub-pill">Promises</span>
+                                        <span class="sub-pill">JSON</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level-badge intermediate">INTERMEDIATE</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="75%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">75%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">Data parsing</span>
+                                        <span class="sub-pill">Flask API</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & Libraries -->
+                    <div class="skill-category-block">
+                        <div class="category-title-bar">
+                            <i data-lucide="layers" class="category-icon text-cyan"></i>
+                            <h4>Frameworks & Libraries</h4>
+                        </div>
+                        <div class="skill-cards-stack">
+                            
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">React.js & Router</span>
+                                    <span class="skill-level-badge advanced">ADVANCED</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="85%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">85%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">Hooks API</span>
+                                        <span class="sub-pill">SPA Routing</span>
+                                        <span class="sub-pill">Context</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">Express.js & Node</span>
+                                    <span class="skill-level-badge advanced">ADVANCED</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="80%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">80%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">REST APIs</span>
+                                        <span class="sub-pill">Middleware</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Database & Development Tools -->
+                    <div class="skill-category-block">
+                        <div class="category-title-bar">
+                            <i data-lucide="database-backup" class="category-icon text-purple"></i>
+                            <h4>Database & Dev Tools</h4>
+                        </div>
+                        <div class="skill-cards-stack">
+                            
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">MongoDB Atlas</span>
+                                    <span class="skill-level-badge intermediate">INTERMEDIATE</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="78%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">78%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">NoSQL Schemas</span>
+                                        <span class="sub-pill">Mongoose</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">Git & Github Workflow</span>
+                                    <span class="skill-level-badge advanced">ADVANCED</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="85%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">85%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">Rebase</span>
+                                        <span class="sub-pill">Actions CI</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Professional Skills -->
+                    <div class="skill-category-block">
+                        <div class="category-title-bar">
+                            <i data-lucide="users" class="category-icon text-cyan"></i>
+                            <h4>Professional Skills</h4>
+                        </div>
+                        <div class="skill-cards-stack">
+                            
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">Agile Team Sprints</span>
+                                    <span class="skill-level-badge advanced">ADVANCED</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="90%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">90%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">Jira Boards</span>
+                                        <span class="sub-pill">Scrum Rituals</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skill-data-card">
+                                <div class="skill-details">
+                                    <span class="skill-name">Technical Writing</span>
+                                    <span class="skill-level-badge intermediate">INTERMEDIATE</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" data-progress="80%"></div>
+                                </div>
+                                <div class="skill-footer">
+                                    <span class="percentage-val">80%</span>
+                                    <div class="sub-tags">
+                                        <span class="sub-pill">UML Specs</span>
+                                        <span class="sub-pill">API Docs</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Page F: Project Dropdowns -->
+        
+        <!-- Project Subpage 1: Project Overview & Documentation Layout -->
+        <section id="project-overview" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">PROJECT OVERVIEW</h2>
+                    <p class="section-subtext">Agile project analysis, architectural mappings, and specification documents.</p>
+                </div>
+
+                <div class="project-docs-layout">
+                    <!-- Problem Statement Card -->
+                    <div class="doc-item-card full-width border-cyan">
+                        <div class="doc-card-title-bar">
+                            <i data-lucide="alert-triangle" class="text-cyan"></i>
+                            <h4>Problem Statement</h4>
+                        </div>
+                        <p>
+                            Modern engineering education portfolios are often scattered across flat, static hosts, lacking visual flow, interactivity, and structure. There is a clear need for a centralized, premium, and interactive Single Page Portfolio Application that bridges Web Technology competencies (HTML, CSS, JS, Node, React) with structured Software Engineering methodologies (Agile timelines, Sprint workflows, architectural models, and user story definitions).
+                        </p>
+                    </div>
+
+                    <!-- Objectives & Motivation -->
+                    <div class="doc-split-row">
+                        <div class="doc-item-card">
+                            <div class="doc-card-title-bar">
+                                <i data-lucide="target" class="text-purple"></i>
+                                <h4>Objectives & Motivation</h4>
+                            </div>
+                            <ul class="clean-bullet-list">
+                                <li>Create a unified, responsive client-side SPA with zero-loading navigation speeds.</li>
+                                <li>Model Agile Sprint operations using timeline nodes and interactive priority statuses.</li>
+                                <li>Demonstrate concrete learning outputs with actual code tab viewer displays and simulated outputs.</li>
+                                <li>Express backend workflows and modular diagrams natively inside structural CSS layout assets.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Target Users -->
+                        <div class="doc-item-card">
+                            <div class="doc-card-title-bar">
+                                <i data-lucide="users" class="text-cyan"></i>
+                                <h4>Target Users & Stakeholders</h4>
+                            </div>
+                            <div class="user-cards-mini-grid">
+                                <div class="mini-user-card">
+                                    <h5>Academic Reviewers</h5>
+                                    <p>Review course metrics, technical learning progressions, and project validation models.</p>
+                                </div>
+                                <div class="mini-user-card">
+                                    <h5>Industry Recruiters</h5>
+                                    <p>Evaluate developer profiles, stack experience (MERN), and visual coding architectures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Tags Interactive Row -->
+                    <div class="tech-stack-row-section">
+                        <h5>Interactive Tech Stack Configuration</h5>
+                        <div class="tech-hover-row" id="techStackRow">
+                            <span class="hover-tag" data-desc="Semantic structure, accessibility, SEO data anchors.">HTML5</span>
+                            <span class="hover-tag" data-desc="Flexible grid system, custom properties, neon filters.">CSS3</span>
+                            <span class="hover-tag" data-desc="Asynchronous DOM logic, SPA router, search engines.">JavaScript</span>
+                            <span class="hover-tag" data-desc="Modular backend routes, secure rest API handles.">Node.js</span>
+                            <span class="hover-tag" data-desc="Virtual DOM rendering, local component hooks state.">React.js</span>
+                            <span class="hover-tag" data-desc="Flexible data mapping schemas, NoSQL document sets.">MongoDB</span>
+                        </div>
+                        <div class="tech-desc-overlay-box" id="techDescBox">
+                            <p class="placeholder-text">Hover over any technology tag to inspect its specific stack purpose...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Subpage 2: Agile Timeline -->
+        <section id="project-timeline" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">AGILE TIMELINE</h2>
+                    <p class="section-subtext">Iterative milestone management, user story definitions, and backlog priorities.</p>
+                </div>
+
+                <div class="timeline-agile-grid">
+                    <!-- Timeline Paths -->
+                    <div class="agile-sprints-timeline">
+                        
+                        <!-- Sprint 1 -->
+                        <div class="sprint-node-card">
+                            <div class="sprint-node-marker border-purple"><i data-lucide="check" class="sprint-icon text-purple"></i></div>
+                            <div class="sprint-content">
+                                <span class="sprint-badge purple-bg">SPRINT 01</span>
+                                <h4>Requirement Analysis & SPA Shell Formulation</h4>
+                                <span class="sprint-date">Weeks 1 - 3</span>
+                                <p>Analyzed domain properties, set color custom profiles, built index files, established base stylesheet layouts, and generated client-side router files.</p>
+                                <div class="sprint-deliverables">
+                                    <span class="deliv-pill">Routing Core</span>
+                                    <span class="deliv-pill">Base Layouts</span>
+                                    <span class="deliv-pill">Typography Spec</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sprint 2 -->
+                        <div class="sprint-node-card">
+                            <div class="sprint-node-marker border-cyan"><i data-lucide="loader" class="sprint-icon text-cyan spin-icon"></i></div>
+                            <div class="sprint-content">
+                                <span class="sprint-badge cyan-bg">SPRINT 02</span>
+                                <h4>Modules Integration & Interactive Timelines</h4>
+                                <span class="sprint-date">Weeks 4 - 6</span>
+                                <p>Integrated five distinct technology modules, coded active syntax tabs, loaded Lucide navigation anchors, built visual Sprint charts, and connected contact links.</p>
+                                <div class="sprint-deliverables">
+                                    <span class="deliv-pill">Code Tabs</span>
+                                    <span class="deliv-pill">Agile Visuals</span>
+                                    <span class="deliv-pill">Search Overlay</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- User Story Panels -->
+                    <div class="user-stories-section">
+                        <h4>Active User Stories Panel</h4>
+                        
+                        <div class="story-panel-card">
+                            <div class="story-header-bar">
+                                <span class="story-id font-mono">US-101</span>
+                                <span class="priority-badge high">HIGH PRIORITY</span>
+                            </div>
+                            <h5>As a Reviewer, I want to toggle learning sections instantly.</h5>
+                            <p class="story-desc"><strong>Criteria</strong>: Nav link triggers state swap without full browser reloads, highlighting active anchors.</p>
+                            <div class="story-footer-status">
+                                <span class="status-indicator-tag done">DONE</span>
+                            </div>
+                        </div>
+
+                        <div class="story-panel-card">
+                            <div class="story-header-bar">
+                                <span class="story-id font-mono">US-102</span>
+                                <span class="priority-badge high">HIGH PRIORITY</span>
+                            </div>
+                            <h5>As a Recruiter, I want to query technical skills directly.</h5>
+                            <p class="story-desc"><strong>Criteria</strong>: Searching key words presents direct shortcuts mapping to corresponding pages.</p>
+                            <div class="story-footer-status">
+                                <span class="status-indicator-tag progress">IN SPRINT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Subpage 3: System Architecture -->
+        <section id="project-architecture" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">SYSTEM ARCHITECTURE</h2>
+                    <p class="section-subtext">Diagram structures showing full-stack network requests, database logic, and client routing.</p>
+                </div>
+
+                <div class="architecture-flow-diagram">
+                    <!-- Step 1: User Client -->
+                    <div class="arch-node-box border-purple">
+                        <div class="arch-node-icon purple-bg"><i data-lucide="monitor"></i></div>
+                        <h5>Browser Client (SPA)</h5>
+                        <p class="font-mono node-desc">HTML5 DOM | CSS Glows | JS Hash Router</p>
+                        <div class="arch-connection-line horizontal">
+                            <span class="arrow-tip-right"></span>
+                            <span class="flow-label">HTTP REST Queries</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Express Server -->
+                    <div class="arch-node-box border-cyan">
+                        <div class="arch-node-icon cyan-bg"><i data-lucide="server"></i></div>
+                        <h5>Express Web Server</h5>
+                        <p class="font-mono node-desc">Node.js Runtime | Endpoint Routers</p>
+                        <div class="arch-connection-line horizontal">
+                            <span class="arrow-tip-right"></span>
+                            <span class="flow-label">Mongoose Queries</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: MongoDB Database -->
+                    <div class="arch-node-box border-purple">
+                        <div class="arch-node-icon purple-bg"><i data-lucide="database"></i></div>
+                        <h5>MongoDB Data Host</h5>
+                        <p class="font-mono node-desc">NoSQL Storage | Collections Profile</p>
+                    </div>
+                </div>
+
+                <!-- Backend Workflow Map and Info -->
+                <div class="modular-workflow-charts">
+                    <div class="workflow-card">
+                        <h5>API Authentication Sequence</h5>
+                        <ul class="workflow-bullets">
+                            <li><span class="wf-step">1</span> Client sends POST credentials to server.</li>
+                            <li><span class="wf-step">2</span> Node validation logic fetches credentials from MongoDB schema.</li>
+                            <li><span class="wf-step">3</span> Server returns encrypted access token (JWT) on valid query.</li>
+                            <li><span class="wf-step">4</span> Client saves token in storage to authenticate headers.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="workflow-card">
+                        <h5>Content Filtering Pipeline</h5>
+                        <ul class="workflow-bullets">
+                            <li><span class="wf-step">1</span> User types into header search overlay input field.</li>
+                            <li><span class="wf-step">2</span> Input handler script scans local pages keyword registry.</li>
+                            <li><span class="wf-step">3</span> Results list renders matching link titles dynamically.</li>
+                            <li><span class="wf-step">4</span> Selecting search link changes hash route instantly.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page G: DevOps Certification -->
+        <section id="devops" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">DEVOPS CERTIFICATION</h2>
+                    <p class="section-subtext">Visual credentials of professional systems administration and cloud deployment completions.</p>
+                </div>
+
+                <div class="certifications-grid">
+                    <!-- Cert 1 -->
+                    <div class="certificate-container-frame">
+                        <div class="cert-mockup-glow"></div>
+                        <div class="cert-card-inner">
+                            <div class="cert-badge-ribbon"><i data-lucide="award"></i></div>
+                            <div class="cert-header">
+                                <span class="cert-issuer">AWS / COURSERA</span>
+                                <h4>DevOps Cloud Foundations</h4>
+                            </div>
+                            <div class="cert-body">
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">Student</span>
+                                    <span class="cert-val font-mono">Chinmay</span>
+                                </div>
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">Date</span>
+                                    <span class="cert-val font-mono">May 2026</span>
+                                </div>
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">ID</span>
+                                    <span class="cert-val font-mono">AWS-DEV-9804X</span>
+                                </div>
+                            </div>
+                            <div class="cert-footer">
+                                <span class="cert-signature-line">Authorized Signee</span>
+                                <span class="cert-verify-stamp">VERIFIED SECURE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="certificate-container-frame">
+                        <div class="cert-mockup-glow secondary-glow"></div>
+                        <div class="cert-card-inner">
+                            <div class="cert-badge-ribbon cyan-badge"><i data-lucide="shield-check"></i></div>
+                            <div class="cert-header">
+                                <span class="cert-issuer">DOCKER CERTIFIED</span>
+                                <h4>Containerization & Orchestration</h4>
+                            </div>
+                            <div class="cert-body">
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">Student</span>
+                                    <span class="cert-val font-mono">Chinmay</span>
+                                </div>
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">Date</span>
+                                    <span class="cert-val font-mono">April 2026</span>
+                                </div>
+                                <div class="cert-meta-row">
+                                    <span class="cert-label">ID</span>
+                                    <span class="cert-val font-mono">DKR-CNT-7721Y</span>
+                                </div>
+                            </div>
+                            <div class="cert-footer">
+                                <span class="cert-signature-line">Docker Academy Director</span>
+                                <span class="cert-verify-stamp">VERIFIED SECURE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page H: Reflections -->
+        <section id="reflections" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">REFLECTIONS</h2>
+                    <p class="section-subtext">Timeline logging academic milestones, technical hurdles, and growth insights.</p>
+                </div>
+
+                <div class="reflections-timeline-wrapper">
+                    <div class="timeline-center-axis"></div>
+
+                    <!-- Milestone 1: Left -->
+                    <div class="timeline-milestone-item left">
+                        <div class="milestone-node purple-glow"><i data-lucide="play-circle"></i></div>
+                        <div class="milestone-card">
+                            <span class="milestone-step-num">STAGE 01</span>
+                            <h4>The Beginning</h4>
+                            <p>Started the term establishing Web Technologies and Software Engineering foundations. Formulated semantic layout specifications and researched SPA page routers to outline modern application structures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2: Right -->
+                    <div class="timeline-milestone-item right">
+                        <div class="milestone-node cyan-glow"><i data-lucide="code"></i></div>
+                        <div class="milestone-card">
+                            <span class="milestone-step-num">STAGE 02</span>
+                            <h4>Technical Hurdles</h4>
+                            <p>Faced challenges designing responsive UI wireframes, implementing search algorithms, and organizing syntax components in the learning files. Solved these issues by structuring variables and clean JavaScript loops.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3: Left -->
+                    <div class="timeline-milestone-item left">
+                        <div class="milestone-node purple-glow"><i data-lucide="users"></i></div>
+                        <div class="milestone-card">
+                            <span class="milestone-step-num">STAGE 03</span>
+                            <h4>Team Collaboration</h4>
+                            <p>Acquired strong insights into Agile team rituals. Utilized Jira backlog boards, assigned priorities to active user stories, created clear UML layout charts, and synchronized git commits under feature branches.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4: Right -->
+                    <div class="timeline-milestone-item right">
+                        <div class="milestone-node cyan-glow"><i data-lucide="check-circle-2"></i></div>
+                        <div class="milestone-card">
+                            <span class="milestone-step-num">STAGE 04</span>
+                            <h4>Final Outcome</h4>
+                            <p>Created a comprehensive, high-fidelity developer portfolio page. Merged technical skills metrics, automated pipeline certificates, reflections timelines, and search logic under a premium dark layout UI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Key Takeaway Quote -->
+                <div class="takeaway-quote-container">
+                    <div class="takeaway-glow-border"></div>
+                    <div class="takeaway-inner">
+                        <i data-lucide="award" class="takeaway-icon"></i>
+                        <h3>Ultimate Growth Takeaway</h3>
+                        <p class="takeaway-text">
+                            "True engineering expertise is built at the intersection of technical excellence and systematic methodology. Writing clean code is only half the battle; managing it with Agile sprint architectures, diagram models, and verified DevOps pipelines makes a system robust, scalable, and premium."
+                        </p>
+                        <span class="takeaway-author">- Chinmay, CSE Student</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page I: Contact -->
+        <section id="contact" class="page-section">
+            <div class="contact-backdrop-wrapper">
+                <span class="contact-watermark-text">CONTACT</span>
+                <div class="container contact-content-inner">
+                    <div class="section-header-block">
+                        <h2 class="giant-header-text text-purple">Get In Touch</h2>
+                        <p class="section-subtext">Connect with me via any platform below for reviews or professional opportunities.</p>
+                    </div>
+
+                    <!-- 2x2 Communication Grid -->
+                    <div class="contact-links-grid">
+                        
+                        <!-- Email Card -->
+                        <a href="mailto:chinmay@example.com" class="contact-link-card">
+                            <div class="card-inner-glow"></div>
+                            <div class="contact-card-icon"><i data-lucide="mail"></i></div>
+                            <span class="contact-type">Email Address</span>
+                            <span class="contact-value">chinmay@example.com</span>
+                            <span class="contact-action-hint">Send Email <i data-lucide="arrow-right"></i></span>
+                        </a>
+
+                        <!-- Phone Card -->
+                        <a href="tel:+919876543210" class="contact-link-card">
+                            <div class="card-inner-glow"></div>
+                            <div class="contact-card-icon"><i data-lucide="phone"></i></div>
+                            <span class="contact-type">Phone Number</span>
+                            <span class="contact-value">+91 98765 43210</span>
+                            <span class="contact-action-hint">Call Mobile <i data-lucide="arrow-right"></i></span>
+                        </a>
+
+                        <!-- LinkedIn Card -->
+                        <a href="https://linkedin.com/in/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                            <div class="card-inner-glow"></div>
+                            <div class="contact-card-icon"><i data-lucide="linkedin"></i></div>
+                            <span class="contact-type">LinkedIn Network</span>
+                            <span class="contact-value">linkedin.com/in/chinmay</span>
+                            <span class="contact-action-hint">View Profile <i data-lucide="arrow-right"></i></span>
+                        </a>
+
+                        <!-- GitHub Card -->
+                        <a href="https://github.com/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                            <div class="card-inner-glow"></div>
+                            <div class="contact-card-icon"><i data-lucide="github"></i></div>
+                            <span class="contact-type">GitHub Profile</span>
+                            <span class="contact-value">github.com/chinmay-example</span>
+                            <span class="contact-action-hint">View Projects <i data-lucide="arrow-right"></i></span>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Chinmay's Portfolio. Developed under Web Technology Course directives.</p>
+            <div class="footer-bottom-links">
+                <a href="#home">Home</a>
+                <a href="#intro">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>
