@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chinmay's Portfolio | Web Technology & Software Engineering</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Consolidated Stylesheet -->
     <style>
         /* ==========================================================================
            Chinmay's Portfolio - Modern CSS Design System
@@ -118,7 +121,7 @@
           left: 0;
           width: 100%;
           z-index: 1000;
-          background: rgba(11, 15, 25, 0.85);
+          background: rgba(11, 15, 25, 0.95);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-bottom: 1px solid var(--border-color);
@@ -129,61 +132,50 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          max-width: 1300px;
+          max-width: 1440px;
           margin: 0 auto;
-          padding: 16px 24px;
+          padding: 18px 32px;
         }
 
         .brand-logo {
-          font-family: var(--font-heading);
-          font-size: 1.4rem;
-          font-weight: 700;
-          letter-spacing: -0.5px;
+          font-family: var(--font-body);
+          font-size: 1.35rem;
+          font-weight: 400;
+          letter-spacing: -0.2px;
           color: var(--text-white);
-          position: relative;
-          display: inline-block;
+          white-space: nowrap;
         }
 
-        .brand-logo::after {
-          content: '';
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 35%;
-          height: 2px;
-          background: var(--accent-purple);
+        .nav-menu {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+          margin-right: 24px;
         }
 
         .nav-list {
           display: flex;
           align-items: center;
           list-style: none;
-          gap: 8px;
+          gap: 4px;
         }
 
         .nav-link {
-          font-size: 0.95rem;
-          font-weight: 500;
-          color: var(--text-gray);
+          font-size: 0.98rem;
+          font-weight: 400;
+          color: #e5e7eb;
           padding: 8px 14px;
           border-radius: 8px;
-          position: relative;
+          transition: var(--transition);
         }
 
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover {
           color: var(--text-white);
         }
 
-        /* Active State Underline Indicator */
-        .nav-link.active::after {
-          content: '';
-          position: absolute;
-          bottom: -18px;
-          left: 15%;
-          width: 70%;
-          height: 2px;
-          background: var(--accent-purple);
-          box-shadow: 0 0 10px var(--accent-purple);
+        .nav-link.active {
+          font-weight: 700;
+          color: var(--text-white);
         }
 
         /* Dropdown Menu Architecture */
@@ -205,7 +197,6 @@
 
         .dropdown:hover .nav-icon {
           transform: rotate(180deg);
-          color: var(--accent-purple);
         }
 
         .dropdown-menu {
@@ -218,7 +209,7 @@
           border-radius: 10px;
           padding: 8px 0;
           min-width: 180px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(167, 139, 250, 0.05);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
           opacity: 0;
           visibility: hidden;
           transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -241,11 +232,12 @@
           font-size: 0.9rem;
           color: var(--text-gray);
           font-weight: 500;
+          text-align: left;
         }
 
         .nav-dropdown-link:hover {
           background: rgba(255, 255, 255, 0.04);
-          color: var(--accent-cyan);
+          color: var(--text-white);
           padding-left: 20px;
         }
 
@@ -259,19 +251,14 @@
         .search-btn {
           background: none;
           border: none;
-          color: var(--text-gray);
+          color: var(--text-white);
           cursor: pointer;
-          padding: 8px;
+          padding: 6px;
           border-radius: 8px;
           transition: var(--transition);
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .search-btn:hover {
-          color: var(--accent-cyan);
-          background: rgba(255, 255, 255, 0.05);
         }
 
         .search-btn svg {
@@ -1136,6 +1123,7 @@
           position: relative;
           z-index: 2;
           margin-bottom: 10px;
+                text-align: left;
         }
 
         .reflection-quote-card cite {
@@ -1212,6 +1200,7 @@
           padding: 20px;
           flex-grow: 1;
           overflow-x: auto;
+          text-align: left;
         }
 
         .code-pre {
@@ -1313,6 +1302,10 @@
           color: var(--accent-purple);
         }
 
+        .mock-browser-body {
+            text-align: left;
+        }
+
         .mock-browser-body h3 {
           font-size: 1rem;
           margin-bottom: 6px;
@@ -1350,6 +1343,7 @@
           grid-template-columns: repeat(2, 1fr);
           gap: 12px;
           align-content: center;
+          text-align: left;
         }
 
         .mock-grid-item {
@@ -1836,6 +1830,7 @@
         .tech-desc-overlay-box .placeholder-text {
           color: #4b5563;
           font-style: italic;
+          text-align: left;
         }
 
         /* Project Subpage 2: Agile Timeline elements */
@@ -2169,7 +2164,7 @@
         }
 
         .cert-mockup-glow.secondary-glow {
-          background: linear-gradient(135deg, var(--accent-cyan) 0%, rgba(11, 15, 25, 0) 100%);
+          background: linear-gradient(135deg, var(--accent-cyan) 0%, rgba(11, 15, 25, 0) 1000%);
         }
 
         .cert-card-inner {
@@ -2611,6 +2606,13 @@
         /* ==========================================================================
            Responsive Breakpoints
            ========================================================================== */
+        @media (max-width: 1120px) {
+            .nav-link {
+                padding: 6px 8px;
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 992px) {
           .hero-tagline { font-size: 3rem; }
           .hero-title { font-size: 3.5rem; }
@@ -2686,12 +2688,7 @@
             display: block;
             width: 100%;
             padding: 10px 0;
-          }
-          
-          .nav-link.active::after {
-            bottom: 0;
-            left: 0;
-            width: 40px;
+            text-align: left;
           }
           
           .dropdown-menu {
@@ -2805,9 +2802,10 @@
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header class="main-header">
         <div class="header-container">
-            <a href="#home" class="brand-logo">Chinmay's Portfolio</a>
+            <div class="brand-logo">Anagha Nadgouda_Portfolio</div>
             
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
@@ -2815,6 +2813,7 @@
                     <li><a href="#intro" class="nav-link" data-page="intro">Introduction</a></li>
                     <li><a href="#course-overview" class="nav-link" data-page="course-overview">Course Overview</a></li>
                     
+                    <!-- Learning Dropdown -->
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="learningDropdown">Learning <i data-lucide="chevron-down" class="nav-icon"></i></a>
                         <ul class="dropdown-menu">
@@ -2828,6 +2827,7 @@
                     
                     <li><a href="#skills" class="nav-link" data-page="skills">Skills</a></li>
                     
+                    <!-- Project Dropdown -->
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="projectDropdown">Project <i data-lucide="chevron-down" class="nav-icon"></i></a>
                         <ul class="dropdown-menu">
@@ -2856,6 +2856,7 @@
         </div>
     </header>
 
+    <!-- Search Overlay -->
     <div class="search-overlay" id="searchOverlay">
         <div class="search-modal">
             <div class="search-header">
@@ -2867,13 +2868,16 @@
             </div>
             <div class="search-results-wrapper">
                 <ul class="search-results-list" id="searchResultsList">
-                    </ul>
+                    <!-- Results populated dynamically by JS -->
+                </ul>
             </div>
         </div>
     </div>
 
+    <!-- Main Views Container -->
     <main class="main-content">
         
+        <!-- Page A: Home -->
         <section id="home" class="page-section active">
             <div class="hero-section">
                 <div class="hero-container">
@@ -2885,6 +2889,7 @@
             </div>
 
             <div class="home-grid container">
+                <!-- Student Profile Card -->
                 <div class="student-profile-card">
                     <div class="card-glow-layer"></div>
                     <div class="profile-header">
@@ -2911,6 +2916,7 @@
                     </div>
                 </div>
 
+                <!-- Course Overview Grid -->
                 <div class="course-cards-row">
                     <div class="course-glow-card">
                         <div class="card-inner">
@@ -2932,6 +2938,7 @@
             </div>
         </section>
 
+        <!-- Page B: Introduction -->
         <section id="intro" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -2940,6 +2947,7 @@
                 </div>
 
                 <div class="intro-flex-layout">
+                    <!-- Left: Profile portrait -->
                     <div class="profile-portrait-frame">
                         <div class="portrait-box">
                             <div class="portrait-avatar-placeholder">
@@ -2950,6 +2958,7 @@
                         </div>
                     </div>
 
+                    <!-- Right: Dedicated, dark "About Me" box -->
                     <div class="about-me-box">
                         <div class="about-tags-row">
                             <span class="badge-chip">Student</span>
@@ -2966,6 +2975,7 @@
                     </div>
                 </div>
 
+                <!-- Technical Skills Overview -->
                 <div class="tech-overview-title">
                     <h4>Technical Competency Zones</h4>
                 </div>
@@ -3012,6 +3022,7 @@
             </div>
         </section>
 
+        <!-- Page C: Course Overview -->
         <section id="course-overview" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -3020,6 +3031,7 @@
                 </div>
 
                 <div class="course-deep-dive">
+                    <!-- Web Technology Block -->
                     <div class="course-detail-section">
                         <div class="detail-header-row">
                             <div class="detail-logo purple-shadow">
@@ -3056,6 +3068,7 @@
                         </div>
                     </div>
 
+                    <!-- Software Engineering Block -->
                     <div class="course-detail-section">
                         <div class="detail-header-row">
                             <div class="detail-logo cyan-shadow">
@@ -3095,6 +3108,9 @@
             </div>
         </section>
 
+        <!-- Page D: Learning Modules -->
+        
+        <!-- Learning: HTML -->
         <section id="learning-html" class="page-section">
             <div class="container">
                 <div class="learning-header-block">
@@ -3109,6 +3125,7 @@
                     </p>
                 </div>
 
+                <!-- Key Features Row -->
                 <div class="key-features-row">
                     <div class="feature-card">
                         <i data-lucide="check-circle-2" class="feature-icon"></i>
@@ -3127,6 +3144,7 @@
                     </div>
                 </div>
 
+                <!-- Personal Reflection Quote Card -->
                 <div class="reflection-quote-card">
                     <i data-lucide="quote" class="quote-icon"></i>
                     <blockquote>
@@ -3135,7 +3153,9 @@
                     <cite>- Learning Reflection</cite>
                 </div>
 
+                <!-- Code Container & Wireframe Split -->
                 <div class="code-output-split">
+                    <!-- Left: Code tab view -->
                     <div class="code-container-widget">
                         <div class="code-header-bar">
                             <span class="file-name font-mono"><i data-lucide="file-code" class="file-icon"></i> index.html</span>
@@ -3170,7 +3190,7 @@
   <span class="code-tag">&lt;article <span class="code-attr">class</span>=<span class="code-string">"card"</span>&gt;</span>
     <span class="code-tag">&lt;header&gt;</span>
       <span class="code-tag">&lt;h3&gt;</span>Article Header Title<span class="code-tag">&lt;/h3&gt;</span>
-    <span class="code-tag">&lt;/header&gt;</span>
+    </span class="code-tag">&lt;/header&gt;</span>
     <span class="code-tag">&lt;p&gt;</span>This represents modular card component layout structure.<span class="code-tag">&lt;/p&gt;</span>
     <span class="code-tag">&lt;footer&gt;</span>
       <span class="code-tag">&lt;small&gt;</span>Category: Grid Modules<span class="code-tag">&lt;/small&gt;</span>
@@ -3180,6 +3200,7 @@
                         </div>
                     </div>
 
+                    <!-- Right: UI Wireframe / Preview -->
                     <div class="wireframe-container">
                         <div class="wireframe-header">
                             <span class="window-dot red"></span>
@@ -3208,6 +3229,7 @@
             </div>
         </section>
 
+        <!-- Learning: CSS -->
         <section id="learning-css" class="page-section">
             <div class="container">
                 <div class="learning-header-block">
@@ -3307,6 +3329,7 @@
             </div>
         </section>
 
+        <!-- Learning: JavaScript -->
         <section id="learning-js" class="page-section">
             <div class="container">
                 <div class="learning-header-block">
@@ -3397,6 +3420,7 @@ fetchButton.addEventListener(<span class="code-string">'click'</span>, <span cla
             </div>
         </section>
 
+        <!-- Learning: Node.js -->
         <section id="learning-node" class="page-section">
             <div class="container">
                 <div class="learning-header-block">
@@ -3492,6 +3516,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Learning: React.js -->
         <section id="learning-react" class="page-section">
             <div class="container">
                 <div class="learning-header-block">
@@ -3592,6 +3617,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Page E: Skills -->
         <section id="skills" class="page-section">
             <div class="container">
                 <div class="skills-hero-banner">
@@ -3604,6 +3630,7 @@ module.exports = router;</code></pre>
 
                 <div class="skills-categories-grid">
                     
+                    <!-- Programming Languages -->
                     <div class="skill-category-block">
                         <div class="category-title-bar">
                             <i data-lucide="code-2" class="category-icon text-purple"></i>
@@ -3649,6 +3676,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Frameworks & Libraries -->
                     <div class="skill-category-block">
                         <div class="category-title-bar">
                             <i data-lucide="layers" class="category-icon text-cyan"></i>
@@ -3660,7 +3688,7 @@ module.exports = router;</code></pre>
                                 <div class="skill-details">
                                     <span class="skill-name">React.js &amp; Router</span>
                                     <span class="skill-level-badge advanced">ADVANCED</span>
-                                </div>
+                                clip</div>
                                 <div class="progress-bar-container">
                                     <div class="progress-bar-fill" data-progress="85%"></div>
                                 </div>
@@ -3694,6 +3722,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Database & Development Tools -->
                     <div class="skill-category-block">
                         <div class="category-title-bar">
                             <i data-lucide="database-backup" class="category-icon text-purple"></i>
@@ -3738,6 +3767,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Professional Skills -->
                     <div class="skill-category-block">
                         <div class="category-title-bar">
                             <i data-lucide="users" class="category-icon text-cyan"></i>
@@ -3786,6 +3816,9 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Page F: Project Dropdowns -->
+        
+        <!-- Project Subpage 1: Project Overview -->
         <section id="project-overview" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -3794,6 +3827,7 @@ module.exports = router;</code></pre>
                 </div>
 
                 <div class="project-docs-layout">
+                    <!-- Problem Statement Card -->
                     <div class="doc-item-card full-width border-cyan">
                         <div class="doc-card-title-bar">
                             <i data-lucide="alert-triangle" class="text-cyan"></i>
@@ -3804,6 +3838,7 @@ module.exports = router;</code></pre>
                         </p>
                     </div>
 
+                    <!-- Objectives & Motivation -->
                     <div class="doc-split-row">
                         <div class="doc-item-card">
                             <div class="doc-card-title-bar">
@@ -3818,6 +3853,7 @@ module.exports = router;</code></pre>
                             </ul>
                         </div>
 
+                        <!-- Target Users -->
                         <div class="doc-item-card">
                             <div class="doc-card-title-bar">
                                 <i data-lucide="users" class="text-cyan"></i>
@@ -3836,6 +3872,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Tech Stack Tags Interactive Row -->
                     <div class="tech-stack-row-section">
                         <h5>Interactive Tech Stack Configuration</h5>
                         <div class="tech-hover-row" id="techStackRow">
@@ -3854,6 +3891,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Project Subpage 2: Agile Timeline -->
         <section id="project-timeline" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -3862,8 +3900,10 @@ module.exports = router;</code></pre>
                 </div>
 
                 <div class="timeline-agile-grid">
+                    <!-- Timeline Paths -->
                     <div class="agile-sprints-timeline">
                         
+                        <!-- Sprint 1 -->
                         <div class="sprint-node-card">
                             <div class="sprint-node-marker border-purple"><i data-lucide="check" class="sprint-icon text-purple"></i></div>
                             <div class="sprint-content">
@@ -3879,6 +3919,7 @@ module.exports = router;</code></pre>
                             </div>
                         </div>
 
+                        <!-- Sprint 2 -->
                         <div class="sprint-node-card">
                             <div class="sprint-node-marker border-cyan"><i data-lucide="loader" class="sprint-icon text-cyan spin-icon"></i></div>
                             <div class="sprint-content">
@@ -3896,6 +3937,7 @@ module.exports = router;</code></pre>
                         
                     </div>
 
+                    <!-- User Story Panels -->
                     <div class="user-stories-section">
                         <h4>Active User Stories Panel</h4>
                         
@@ -3927,6 +3969,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Project Subpage 3: System Architecture -->
         <section id="project-architecture" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -3935,6 +3978,7 @@ module.exports = router;</code></pre>
                 </div>
 
                 <div class="architecture-flow-diagram">
+                    <!-- Step 1: User Client -->
                     <div class="arch-node-box border-purple">
                         <div class="arch-node-icon purple-bg"><i data-lucide="monitor"></i></div>
                         <h5>Browser Client (SPA)</h5>
@@ -3945,6 +3989,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Step 2: Express Server -->
                     <div class="arch-node-box border-cyan">
                         <div class="arch-node-icon cyan-bg"><i data-lucide="server"></i></div>
                         <h5>Express Web Server</h5>
@@ -3955,6 +4000,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Step 3: MongoDB Database -->
                     <div class="arch-node-box border-purple">
                         <div class="arch-node-icon purple-bg"><i data-lucide="database"></i></div>
                         <h5>MongoDB Data Host</h5>
@@ -3962,6 +4008,7 @@ module.exports = router;</code></pre>
                     </div>
                 </div>
 
+                <!-- Backend Workflow Map and Info -->
                 <div class="modular-workflow-charts">
                     <div class="workflow-card">
                         <h5>API Authentication Sequence</h5>
@@ -3986,6 +4033,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Page G: DevOps Certification -->
         <section id="devops" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -3994,6 +4042,7 @@ module.exports = router;</code></pre>
                 </div>
 
                 <div class="certifications-grid">
+                    <!-- Cert 1 -->
                     <div class="certificate-container-frame">
                         <div class="cert-mockup-glow"></div>
                         <div class="cert-card-inner">
@@ -4023,6 +4072,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Cert 2 -->
                     <div class="certificate-container-frame">
                         <div class="cert-mockup-glow secondary-glow"></div>
                         <div class="cert-card-inner">
@@ -4055,6 +4105,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Page H: Reflections -->
         <section id="reflections" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -4065,6 +4116,7 @@ module.exports = router;</code></pre>
                 <div class="reflections-timeline-wrapper">
                     <div class="timeline-center-axis"></div>
 
+                    <!-- Milestone 1: Left -->
                     <div class="timeline-milestone-item left">
                         <div class="milestone-node purple-glow"><i data-lucide="play-circle"></i></div>
                         <div class="milestone-card">
@@ -4074,6 +4126,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Milestone 2: Right -->
                     <div class="timeline-milestone-item right">
                         <div class="milestone-node cyan-glow"><i data-lucide="code"></i></div>
                         <div class="milestone-card">
@@ -4083,6 +4136,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Milestone 3: Left -->
                     <div class="timeline-milestone-item left">
                         <div class="milestone-node purple-glow"><i data-lucide="users"></i></div>
                         <div class="milestone-card">
@@ -4092,6 +4146,7 @@ module.exports = router;</code></pre>
                         </div>
                     </div>
 
+                    <!-- Milestone 4: Right -->
                     <div class="timeline-milestone-item right">
                         <div class="milestone-node cyan-glow"><i data-lucide="check-circle-2"></i></div>
                         <div class="milestone-card">
@@ -4102,6 +4157,7 @@ module.exports = router;</code></pre>
                     </div>
                 </div>
 
+                <!-- Signature Key Takeaway Quote -->
                 <div class="takeaway-quote-container">
                     <div class="takeaway-glow-border"></div>
                     <div class="takeaway-inner">
@@ -4116,6 +4172,7 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <!-- Page I: Contact -->
         <section id="contact" class="page-section">
             <div class="contact-backdrop-wrapper">
                 <span class="contact-watermark-text">CONTACT</span>
@@ -4125,8 +4182,10 @@ module.exports = router;</code></pre>
                         <p class="section-subtext">Connect with me via any platform below for reviews or professional opportunities.</p>
                     </div>
 
+                    <!-- 2x2 Communication Grid -->
                     <div class="contact-links-grid">
                         
+                        <!-- Email Card -->
                         <a href="mailto:chinmay@example.com" class="contact-link-card">
                             <div class="card-inner-glow"></div>
                             <div class="contact-card-icon"><i data-lucide="mail"></i></div>
@@ -4135,6 +4194,7 @@ module.exports = router;</code></pre>
                             <span class="contact-action-hint">Send Email <i data-lucide="arrow-right"></i></span>
                         </a>
 
+                        <!-- Phone Card -->
                         <a href="tel:+919876543210" class="contact-link-card">
                             <div class="card-inner-glow"></div>
                             <div class="contact-card-icon"><i data-lucide="phone"></i></div>
@@ -4143,6 +4203,7 @@ module.exports = router;</code></pre>
                             <span class="contact-action-hint">Call Mobile <i data-lucide="arrow-right"></i></span>
                         </a>
 
+                        <!-- LinkedIn Card -->
                         <a href="https://linkedin.com/in/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
                             <div class="card-inner-glow"></div>
                             <div class="contact-card-icon"><i data-lucide="linkedin"></i></div>
@@ -4151,6 +4212,7 @@ module.exports = router;</code></pre>
                             <span class="contact-action-hint">View Profile <i data-lucide="arrow-right"></i></span>
                         </a>
 
+                        <!-- GitHub Card -->
                         <a href="https://github.com/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
                             <div class="card-inner-glow"></div>
                             <div class="contact-card-icon"><i data-lucide="github"></i></div>
@@ -4166,6 +4228,7 @@ module.exports = router;</code></pre>
 
     </main>
 
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container footer-container">
             <p>&copy; 2026 Chinmay's Portfolio. Developed under Web Technology Course directives.</p>
@@ -4177,6 +4240,7 @@ module.exports = router;</code></pre>
         </div>
     </footer>
 
+    <!-- Consolidated Client-Side Logic & Router Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
