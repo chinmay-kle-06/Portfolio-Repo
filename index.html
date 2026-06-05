@@ -2173,54 +2173,33 @@
            ========================================================================== */
         .certifications-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: 1fr;
           gap: 30px;
           text-align: left;
+          justify-items: center;
         }
 
-        .certificate-container-frame {
-          position: relative;
-          border-radius: 12px;
+        .certificate-image-card {
+          width: 100%;
+          max-width: 900px;
+          border-radius: 18px;
           overflow: hidden;
           transition: var(--transition);
-          background: #1f2937;
-          padding: 3px; /* Creates board outline border offset */
-        }
-
-        .cert-mockup-glow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, var(--accent-purple) 0%, rgba(11, 15, 25, 0) 100%);
-          z-index: 1;
-        }
-
-        .cert-mockup-glow.secondary-glow {
-          background: linear-gradient(135deg, var(--accent-cyan) 0%, rgba(11, 15, 25, 0) 1000%);
-        }
-
-        .cert-card-inner {
-          position: relative;
-          z-index: 2;
           background: var(--card-bg);
-          border-radius: 9px;
-          padding: 40px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          border: 1px dashed rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--border-color);
+          box-shadow: var(--shadow-soft);
         }
 
-        .certificate-container-frame:hover {
+        .certificate-image-card img {
+          display: block;
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+
+        .certificate-image-card:hover {
           transform: translateY(-5px);
           box-shadow: var(--shadow-glow);
-        }
-
-        .certificate-container-frame:last-child:hover {
-          box-shadow: var(--shadow-glow-cyan);
         }
 
         .cert-badge-ribbon {
@@ -2884,6 +2863,7 @@
                         </ul>
                     </li>
                     
+                    <li><a href="#devops" class="nav-link" data-page="devops">DevOps Certification</a></li>
                     <li><a href="#reflections" class="nav-link" data-page="reflections">Reflections</a></li>
                     <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
                 </ul>
@@ -4076,6 +4056,21 @@ module.exports = router;</code></pre>
             </div>
         </section>
 
+        <section id="devops" class="page-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <h2 class="giant-header-text">DEVOPS CERTIFICATION</h2>
+                    <p class="section-subtext">Visual credentials of professional systems administration and cloud deployment completions.</p>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="certificate-image-card">
+                        <img src="certificate.png" alt="DevOps Certification" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="reflections" class="page-section">
             <div class="container">
                 <div class="section-header-block">
@@ -4337,6 +4332,7 @@ module.exports = router;</code></pre>
                 { title: 'Project: Complaint Management System', page: 'project-overview', keywords: ['problem statement', 'objectives', 'stakeholders', 'recruiters', 'academic', 'tech stack', 'cms', 'complaint', 'management', 'system'] },
                 { title: 'Project: Agile Timelines & Sprints', page: 'project-timeline', keywords: ['agile timeline', 'sprint 1', 'sprint 2', 'user stories', 'milestones', 'priority', 'complaint engine'] },
                 { title: 'Project: System Architectures & UML', page: 'project-architecture', keywords: ['system architecture', 'uml diagrams', 'flowcharts', 'auth pipeline', 'express server', 'mongodb'] },
+                { title: 'DevOps completions Certifications', page: 'devops', keywords: ['devops', 'certification', 'cloud', 'aws', 'docker', 'containerization'] },
                 { title: 'Academic Reflection journey', page: 'reflections', keywords: ['reflections', 'hurdles', 'collaboration', 'timeline', 'growth', 'outcome'] },
                 { title: 'Contact coordinates details', page: 'contact', keywords: ['contact', 'email', 'phone', 'linkedin', 'github', 'get in touch'] }
             ];
@@ -4383,7 +4379,8 @@ module.exports = router;</code></pre>
                     const suggestions = [
                         { title: 'Navigate to Home', page: 'home', desc: 'Main entry details' },
                         { title: 'Inspect Skills Matrix', page: 'skills', desc: 'Technical proficiency graphs' },
-                        { title: 'Check Sprint Timelines', page: 'project-timeline', desc: 'Agile timeline user stories' }
+                        { title: 'Check Sprint Timelines', page: 'project-timeline', desc: 'Agile timeline user stories' },
+                        { title: 'View Cloud Certifications', page: 'devops', desc: 'AWS and Docker credentials' }
                     ];
                     
                     suggestions.forEach(item => {
