@@ -52,8 +52,8 @@
         @media (max-width: 600px) {
           .header-container { padding: 12px 16px; }
           .brand-logo { font-size: 1.15rem; letter-spacing: -0.2px; }
-          .nav-menu { display: none; }
           .burger-menu { display: flex; }
+          .nav-menu { width: 100%; max-width: 280px; }
 
           .intro-flex-layout { flex-direction: column; gap: 20px; }
           .profile-portrait-frame { max-width: 100%; }
@@ -280,23 +280,22 @@
           display: flex;
           align-items: center;
           gap: 12px;
-        }
+            position: relative;
+            z-index: 1003;
+          }
 
-        .search-btn {
-          background: none;
-          border: none;
-          color: var(--text-white);
-          cursor: pointer;
-          padding: 6px;
-          border-radius: 8px;
-          transition: var(--transition);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .search-btn svg {
-          width: 20px;
+          .search-btn {
+            background: none;
+            border: none;
+            color: var(--text-white);
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1004;
           height: 20px;
         }
 
@@ -310,6 +309,7 @@
           background: transparent;
           border: none;
           cursor: pointer;
+          z-index: 1004;
         }
 
         .burger-menu .bar {
@@ -337,28 +337,15 @@
           justify-content: center;
           opacity: 0;
           visibility: hidden;
+          pointer-events: none;
           transition: var(--transition);
           padding-top: 100px;
         }
-
+        
         .search-overlay.active {
           opacity: 1;
           visibility: visible;
-        }
-
-        .search-modal {
-          width: 100%;
-          max-width: 600px;
-          background: var(--card-bg);
-          border: 1px solid rgba(167, 139, 250, 0.2);
-          border-radius: 14px;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(167, 139, 250, 0.1);
-          overflow: hidden;
-          transform: translateY(-20px);
-          transition: var(--transition);
-        }
-
-        .search-overlay.active .search-modal {
+          pointer-events: auto;
           transform: translateY(0);
         }
 
@@ -2563,6 +2550,18 @@
           color: var(--accent-cyan);
         }
 
+        .contact-card-linkedin .contact-card-icon {
+          background: rgba(10, 102, 194, 0.1);
+          border-color: rgba(10, 102, 194, 0.18);
+          color: #0a66c2;
+        }
+
+        .contact-card-github .contact-card-icon {
+          background: rgba(36, 41, 46, 0.1);
+          border-color: rgba(36, 41, 46, 0.18);
+          color: #181717;
+        }
+
         .contact-card-icon svg {
           width: 24px;
           height: 24px;
@@ -2704,20 +2703,24 @@
           }
           
           .nav-menu {
+            display: flex;
             position: fixed;
             top: 65px;
-            right: -100%;
+            right: 0;
+            transform: translateX(100%);
             width: 280px;
             height: calc(100vh - 65px);
             background: rgba(11, 15, 25, 0.98);
             border-left: 1px solid var(--border-color);
             padding: 30px;
-            transition: var(--transition);
+            transition: transform var(--transition);
             overflow-y: auto;
+            z-index: 1002;
           }
           
           .nav-menu.active {
-            right: 0;
+            transform: translateX(0);
+            display: flex;
           }
           
           .nav-list {
@@ -2881,7 +2884,6 @@
                         </ul>
                     </li>
                     
-                    <li><a href="#devops" class="nav-link" data-page="devops">DevOps Certification</a></li>
                     <li><a href="#reflections" class="nav-link" data-page="reflections">Reflections</a></li>
                     <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
                 </ul>
@@ -3840,8 +3842,24 @@ module.exports = router;</code></pre>
                             <h4>Problem Statement</h4>
                         </div>
                         <p>
-                            Manual complaint handling at KLE Tech leads to delays, loss of grievances, and zero transparency. Complaints submitted verbally or on paper vanish with no record, leaving genuine issues permanently unresolved. Furthermore, verbal complaints in public settings expose students to social pressure, discouraging them from raising legitimate concerns.
+                            Manual complaint handling at KLE Tech leads to delays, lost grievances, and minimal transparency. Paper-based or verbal submissions often disappear without a record, leaving students and faculty without confirmation or follow-up. The CMS replaces this process with a secure, auditable portal that preserves anonymity when needed and ensures every grievance is tracked to resolution.
                         </p>
+                    </div>
+
+                    <div class="doc-item-card full-width border-purple">
+                        <div class="doc-card-title-bar">
+                            <i data-lucide="book-open" class="text-purple"></i>
+                            <h4>Use Case Scope</h4>
+                        </div>
+                        <p>
+                            The CMS supports the full grievance lifecycle: authenticated complaint submission, evidence upload, status tracking, assignment, escalation, and reporting. It is designed for students, faculty, admins, HODs, and workers, with a secure login layer and contextual dashboards for each role.
+                        </p>
+                        <ul class="clean-bullet-list">
+                            <li><strong>Complaint categories</strong>: Academic, Hostel, Canteen, Network, Electrical, Plumbing.</li>
+                            <li><strong>Submission flow</strong>: Generate unique IDs (e.g., CMS-2026-014), attach proof, and toggle anonymous filing.</li>
+                            <li><strong>Escalation & SLA</strong>: Complaints unresolved beyond five working days automatically route to the HOD.</li>
+                            <li><strong>Notifications</strong>: Real-time dashboard alerts and email confirmations for every complaint stage.</li>
+                        </ul>
                     </div>
 
                     <div class="doc-split-row">
@@ -3851,11 +3869,11 @@ module.exports = router;</code></pre>
                                 <h4>Objectives &amp; Features</h4>
                             </div>
                             <ul class="clean-bullet-list">
-                                <li><strong>Centralized Portal:</strong> One digital platform for all complaints (academic, hostel, etc.) using KLE email.</li>
-                                <li><strong>Role-Based Access:</strong> Tailored dashboards for Students, Faculty, Admin, HOD, and Workers.</li>
-                                <li><strong>Auto Escalation:</strong> Automatically escalates complaints unresolved beyond 5 working days to the HOD.</li>
-                                <li><strong>Full Transparency:</strong> Real-time status updates and email notifications upon every status change.</li>
-                                <li><strong>Privacy Protection:</strong> Support for anonymous complaint submissions to protect student identity.</li>
+                                <li><strong>Centralized Portal:</strong> Single platform for all KLE grievance submissions with KLE email authentication.</li>
+                                <li><strong>Interactive Dashboard:</strong> Live status panels for Total Lodged, Pending Review, In Progress, and Resolved cases.</li>
+                                <li><strong>Complaint Tracking:</strong> Users can view complaint history, status, assigned workers, and campus site details.</li>
+                                <li><strong>Student Privacy:</strong> Optional anonymous submission masks identity from field technicians while preserving case continuity.</li>
+                                <li><strong>Documented Workflow:</strong> Each complaint follows a defined pipeline from submission to resolution and report generation.</li>
                             </ul>
                         </div>
 
@@ -3867,11 +3885,15 @@ module.exports = router;</code></pre>
                             <div class="user-cards-mini-grid">
                                 <div class="mini-user-card">
                                     <h5>Students &amp; Faculty</h5>
-                                    <p>Submit complaints (optionally anonymous), view history, and track real-time resolution status.</p>
+                                    <p>Submit new grievances, upload evidence, view complaint status, and receive confirmation emails and dashboard alerts.</p>
                                 </div>
                                 <div class="mini-user-card">
-                                    <h5>Admins, HODs &amp; Workers</h5>
-                                    <p>Admins assign tasks and set priorities. Workers resolve them. HODs handle escalated 5-day overdue issues.</p>
+                                    <h5>Admins &amp; HODs</h5>
+                                    <p>Assign complaints, set priorities, monitor escalation SLAs, and manage institutional workflow compliance.</p>
+                                </div>
+                                <div class="mini-user-card">
+                                    <h5>Workers</h5>
+                                    <p>Receive assigned tasks, update progress, and close complaints with documented actions.</p>
                                 </div>
                             </div>
                         </div>
@@ -3886,6 +3908,7 @@ module.exports = router;</code></pre>
                           <span class="hover-tag" data-desc="Persistent data storage using Mongoose ODM for NoSQL document collections.">MongoDB</span>
                           <span class="hover-tag" data-desc="Secure role-based access using Bearer Tokens and requireAuth middleware.">JWT Auth</span>
                           <span class="hover-tag" data-desc="Salted password hashing (SALT_ROUNDS=12) for secure user credential storage.">bcrypt</span>
+                          <span class="hover-tag" data-desc="PDF/Excel report exports and compliance tracking for administrative reporting.">Report Engine</span>
                         </div>
                         <div class="tech-desc-overlay-box" id="techDescBox">
                             <p class="placeholder-text">Hover over any technology tag to inspect its specific stack purpose...</p>
@@ -3899,7 +3922,7 @@ module.exports = router;</code></pre>
             <div class="container">
                 <div class="section-header-block">
                     <h2 class="giant-header-text">DEVELOPMENT TIMELINE</h2>
-                    <p class="section-subtext">Iterative milestone management, user story definitions, and backlog priorities.</p>
+                    <p class="section-subtext">Iterative milestone management, user story definitions, and backlog priorities for the CMS rollout.</p>
                 </div>
 
                 <div class="timeline-agile-grid">
@@ -3911,7 +3934,7 @@ module.exports = router;</code></pre>
                                 <span class="sprint-badge purple-bg">PHASE 01</span>
                                 <h4>Authentication &amp; User Modules</h4>
                                 <span class="sprint-date">Initial Setup</span>
-                                <p>Designed the MongoDB schemas for multi-role users (Student, Faculty, Admin, Worker). Implemented secure login with bcrypt password hashing and JWT token generation for role-based dashboard redirection.</p>
+                                <p>Designed MongoDB collections for multi-role users and implemented secure login using bcrypt hashing with SALT_ROUNDS=12. JWT tokens handle role-based dashboard routing for Students, Faculty, Admins, Workers, and HODs.</p>
                                 <div class="sprint-deliverables">
                                     <span class="deliv-pill">JWT Auth</span>
                                     <span class="deliv-pill">Mongoose ODM</span>
@@ -3926,7 +3949,7 @@ module.exports = router;</code></pre>
                                 <span class="sprint-badge cyan-bg">PHASE 02</span>
                                 <h4>Complaint Engine &amp; Notifications</h4>
                                 <span class="sprint-date">Core Integration</span>
-                                <p>Developed the core complaint submission pipeline with anonymous toggles and file evidence uploads. Integrated an automated escalation engine (5-day limit) and real-time email notification service.</p>
+                                <p>Built complaint submission workflows with category selection, anonymous toggles, and evidence upload. Integrated real-time dashboard alerts and email notifications at each complaint stage from Pending to In Progress to Resolved.</p>
                                 <div class="sprint-deliverables">
                                     <span class="deliv-pill">Escalation Engine</span>
                                     <span class="deliv-pill">Status Tracking</span>
@@ -3934,7 +3957,21 @@ module.exports = router;</code></pre>
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <div class="sprint-node-card">
+                            <div class="sprint-node-marker border-purple"><i data-lucide="trending-up" class="sprint-icon text-purple"></i></div>
+                            <div class="sprint-content">
+                                <span class="sprint-badge purple-bg">PHASE 03</span>
+                                <h4>Reporting, SLA &amp; Escalation</h4>
+                                <span class="sprint-date">Operational Completion</span>
+                                <p>Added compliance reporting and escalation support. The system tracks SLA adherence, compiles complaint analytics, and supports administrative report preparation for campus operations.</p>
+                                <div class="sprint-deliverables">
+                                    <span class="deliv-pill">SLA Tracking</span>
+                                    <span class="deliv-pill">Report Engine</span>
+                                    <span class="deliv-pill">HOD Escalation</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="user-stories-section">
@@ -3946,7 +3983,7 @@ module.exports = router;</code></pre>
                                 <span class="priority-badge high">CORE FEATURE</span>
                             </div>
                             <h5>Student: Submit &amp; Track Complaints</h5>
-                            <p class="story-desc"><strong>Criteria</strong>: Form must include category dropdown, description, optional photo upload, and an anonymous toggle. System assigns unique ID (e.g., CMS-2025-001).</p>
+                            <p class="story-desc"><strong>Criteria</strong>: Users select complaint category, enter subject and description, optionally attach files, and optionally submit anonymously. The system generates a unique complaint ID and confirms submission.</p>
                             <div class="story-footer-status">
                                 <span class="status-indicator-tag done">DONE</span>
                             </div>
@@ -3958,7 +3995,19 @@ module.exports = router;</code></pre>
                                 <span class="priority-badge high">CORE FEATURE</span>
                             </div>
                             <h5>Admin: Assign, Filter, &amp; Auto-Escalate</h5>
-                            <p class="story-desc"><strong>Criteria</strong>: Admins can assign workers and set Priority (Low/Med/High). System must auto-escalate to HOD if unresolved for > 5 working days.</p>
+                            <p class="story-desc"><strong>Criteria</strong>: Admin users assign work to technicians, set complaint priority, and trigger automatic escalation if a case remains pending beyond five working days.</p>
+                            <div class="story-footer-status">
+                                <span class="status-indicator-tag done">DONE</span>
+                            </div>
+                        </div>
+
+                        <div class="story-panel-card">
+                            <div class="story-header-bar">
+                                <span class="story-id font-mono">FR-10</span>
+                                <span class="priority-badge medium">USER VALUE</span>
+                            </div>
+                            <h5>Stakeholder: View Complaint Status &amp; Reports</h5>
+                            <p class="story-desc"><strong>Criteria</strong>: Users can review a paginated summary table of complaints with status, category, target site, and action details. Admins can generate operational reports for oversight.</p>
                             <div class="story-footer-status">
                                 <span class="status-indicator-tag done">DONE</span>
                             </div>
@@ -3979,7 +4028,7 @@ module.exports = router;</code></pre>
                     <div class="arch-node-box border-purple">
                         <div class="arch-node-icon purple-bg"><i data-lucide="monitor"></i></div>
                         <h5>React.js + Vite Client</h5>
-                        <p class="font-mono node-desc">Tailwind CSS | Browser UI | JWT Bearer</p>
+                        <p class="font-mono node-desc">Tailwind CSS | Browser UI | JWT Bearer | Complaint Dashboard</p>
                         <div class="arch-connection-line horizontal">
                             <span class="arrow-tip-right"></span>
                             <span class="flow-label">HTTP REST Queries</span>
@@ -3989,7 +4038,7 @@ module.exports = router;</code></pre>
                     <div class="arch-node-box border-cyan">
                         <div class="arch-node-icon cyan-bg"><i data-lucide="server"></i></div>
                         <h5>Express.js API Server</h5>
-                        <p class="font-mono node-desc">Node.js | JWT Middleware | Alert Engine</p>
+                        <p class="font-mono node-desc">Node.js | requireAuth | Role Check | Email Notification</p>
                         <div class="arch-connection-line horizontal">
                             <span class="arrow-tip-right"></span>
                             <span class="flow-label">Mongoose Queries</span>
@@ -3999,7 +4048,7 @@ module.exports = router;</code></pre>
                     <div class="arch-node-box border-purple">
                         <div class="arch-node-icon purple-bg"><i data-lucide="database"></i></div>
                         <h5>MongoDB Database</h5>
-                        <p class="font-mono node-desc">Mongoose ODM | Users &amp; Complaints DB</p>
+                        <p class="font-mono node-desc">complaints, users, notifications, files, reports</p>
                     </div>
                 </div>
 
@@ -4007,90 +4056,21 @@ module.exports = router;</code></pre>
                     <div class="workflow-card">
                         <h5>Submit Complaint Sequence</h5>
                         <ul class="workflow-bullets">
-                            <li><span class="wf-step">1</span> Client sends POST /api/complaints with JWT Bearer token.</li>
-                            <li><span class="wf-step">2</span> Express verifies JWT token &amp; checks student/faculty role.</li>
-                            <li><span class="wf-step">3</span> Mongoose creates document with unique complaintId.</li>
-                            <li><span class="wf-step">4</span> Notification Service sends real-time email alert to user.</li>
+                            <li><span class="wf-step">1</span> Student/Faculty submits complaint via form with category, description, and optional evidence.</li>
+                            <li><span class="wf-step">2</span> Frontend sends POST /api/complaints with Bearer token and complaint payload.</li>
+                            <li><span class="wf-step">3</span> Server verifies JWT and user role, then persists a complaint document with a unique ID.</li>
+                            <li><span class="wf-step">4</span> System triggers email alerts and dashboard updates for both user and administrator.</li>
                         </ul>
                     </div>
                     
                     <div class="workflow-card">
                         <h5>User Login & Auth Flow</h5>
                         <ul class="workflow-bullets">
-                            <li><span class="wf-step">1</span> User enters email and password into React form.</li>
-                            <li><span class="wf-step">2</span> API queries MongoDB for user document across all roles.</li>
-                            <li><span class="wf-step">3</span> bcrypt.compare() validates the hashed password.</li>
-                            <li><span class="wf-step">4</span> Server issues JWT (7d expiry); React routes to custom dashboard.</li>
+                            <li><span class="wf-step">1</span> User enters KLE email and password on the login page.</li>
+                            <li><span class="wf-step">2</span> API checks the appropriate multi-role user collection in MongoDB.</li>
+                            <li><span class="wf-step">3</span> bcrypt.compare() validates the password hash.</li>
+                            <li><span class="wf-step">4</span> Valid users receive a JWT token and are redirected to their role-based dashboard.</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="devops" class="page-section">
-            <div class="container">
-                <div class="section-header-block">
-                    <h2 class="giant-header-text">DEVOPS CERTIFICATION</h2>
-                    <p class="section-subtext">Visual credentials of professional systems administration and cloud deployment completions.</p>
-                </div>
-
-                <div class="certifications-grid">
-                    <div class="certificate-container-frame">
-                        <div class="cert-mockup-glow"></div>
-                        <div class="cert-card-inner">
-                            <div class="cert-badge-ribbon"><i data-lucide="award"></i></div>
-                            <div class="cert-header">
-                                <span class="cert-issuer">AWS / COURSERA</span>
-                                <h4>DevOps Cloud Foundations</h4>
-                            </div>
-                            <div class="cert-body">
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">Student</span>
-                                    <span class="cert-val font-mono">Chinmay</span>
-                                </div>
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">Date</span>
-                                    <span class="cert-val font-mono">May 2026</span>
-                                </div>
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">ID</span>
-                                    <span class="cert-val font-mono">AWS-DEV-9804X</span>
-                                </div>
-                            </div>
-                            <div class="cert-footer">
-                                <span class="cert-signature-line">Authorized Signee</span>
-                                <span class="cert-verify-stamp">VERIFIED SECURE</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-container-frame">
-                        <div class="cert-mockup-glow secondary-glow"></div>
-                        <div class="cert-card-inner">
-                            <div class="cert-badge-ribbon cyan-badge"><i data-lucide="shield-check"></i></div>
-                            <div class="cert-header">
-                                <span class="cert-issuer">DOCKER CERTIFIED</span>
-                                <h4>Containerization &amp; Orchestration</h4>
-                            </div>
-                            <div class="cert-body">
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">Student</span>
-                                    <span class="cert-val font-mono">Chinmay</span>
-                                </div>
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">Date</span>
-                                    <span class="cert-val font-mono">April 2026</span>
-                                </div>
-                                <div class="cert-meta-row">
-                                    <span class="cert-label">ID</span>
-                                    <span class="cert-val font-mono">DKR-CNT-7721Y</span>
-                                </div>
-                            </div>
-                            <div class="cert-footer">
-                                <span class="cert-signature-line">Docker Academy Director</span>
-                                <span class="cert-verify-stamp">VERIFIED SECURE</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -4184,17 +4164,25 @@ module.exports = router;</code></pre>
                             <span class="contact-action-hint">Call Mobile <i data-lucide="arrow-right"></i></span>
                         </a>
 
-                        <a href="https://linkedin.com/in/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                        <a href="https://linkedin.com/in/chinmaybsabarad" target="_blank" rel="noopener noreferrer" class="contact-link-card contact-card-linkedin">
                             <div class="card-inner-glow"></div>
-                            <div class="contact-card-icon"><i data-lucide="linkedin"></i></div>
+                            <div class="contact-card-icon">
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0 8.95h5v14.05H0V8.95zm7.51 0h4.79v1.92h.07c.67-1.26 2.31-2.59 4.75-2.59 5.08 0 6.02 3.34 6.02 7.67V23h-5V15.2c0-1.86-.03-4.25-2.59-4.25-2.59 0-2.99 2.02-2.99 4.1V23h-5V8.95z" />
+                              </svg>
+                            </div>
                             <span class="contact-type">LinkedIn Network</span>
                             <span class="contact-value">linkedin.com/in/chinmaybsabarad</span>
                             <span class="contact-action-hint">View Profile <i data-lucide="arrow-right"></i></span>
                         </a>
 
-                        <a href="https://github.com/chinmay-example" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+                        <a href="https://github.com/chinmay-workdesign" target="_blank" rel="noopener noreferrer" class="contact-link-card contact-card-github">
                             <div class="card-inner-glow"></div>
-                            <div class="contact-card-icon"><i data-lucide="github"></i></div>
+                            <div class="contact-card-icon">
+                              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.263.82-.582 0-.288-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.335-1.756-1.335-1.756-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.42-1.305.762-1.605-2.665-.304-5.467-1.334-5.467-5.93 0-1.31.47-2.38 1.235-3.22-.124-.303-.535-1.525.116-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.655 1.65.245 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.81 1.102.81 2.222 0 1.606-.015 2.9-.015 3.293 0 .32.21.7.825.58C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+                              </svg>
+                            </div>
                             <span class="contact-type">GitHub Profile</span>
                             <span class="contact-value">github.com/chinmay-workdesign</span>
                             <span class="contact-action-hint">View Projects <i data-lucide="arrow-right"></i></span>
@@ -4298,8 +4286,6 @@ module.exports = router;</code></pre>
 
             // Hash change event listeners
             window.addEventListener('hashchange', router);
-            // Initial load route trigger
-            router();
 
             /* ==========================================================================
                2. Mobile Navigation Drawer Toggle
@@ -4351,7 +4337,6 @@ module.exports = router;</code></pre>
                 { title: 'Project: Complaint Management System', page: 'project-overview', keywords: ['problem statement', 'objectives', 'stakeholders', 'recruiters', 'academic', 'tech stack', 'cms', 'complaint', 'management', 'system'] },
                 { title: 'Project: Agile Timelines & Sprints', page: 'project-timeline', keywords: ['agile timeline', 'sprint 1', 'sprint 2', 'user stories', 'milestones', 'priority', 'complaint engine'] },
                 { title: 'Project: System Architectures & UML', page: 'project-architecture', keywords: ['system architecture', 'uml diagrams', 'flowcharts', 'auth pipeline', 'express server', 'mongodb'] },
-                { title: 'DevOps completions Certifications', page: 'devops', keywords: ['devops', 'certification', 'cloud', 'aws', 'docker', 'containerization'] },
                 { title: 'Academic Reflection journey', page: 'reflections', keywords: ['reflections', 'hurdles', 'collaboration', 'timeline', 'growth', 'outcome'] },
                 { title: 'Contact coordinates details', page: 'contact', keywords: ['contact', 'email', 'phone', 'linkedin', 'github', 'get in touch'] }
             ];
@@ -4398,8 +4383,7 @@ module.exports = router;</code></pre>
                     const suggestions = [
                         { title: 'Navigate to Home', page: 'home', desc: 'Main entry details' },
                         { title: 'Inspect Skills Matrix', page: 'skills', desc: 'Technical proficiency graphs' },
-                        { title: 'Check Sprint Timelines', page: 'project-timeline', desc: 'Agile timeline user stories' },
-                        { title: 'View Cloud Certifications', page: 'devops', desc: 'AWS and Docker credentials' }
+                        { title: 'Check Sprint Timelines', page: 'project-timeline', desc: 'Agile timeline user stories' }
                     ];
                     
                     suggestions.forEach(item => {
@@ -4500,6 +4484,9 @@ module.exports = router;</code></pre>
                     bar.style.width = '0%';
                 });
             }
+
+            // Trigger routing after all navigation and skill helpers are available
+            router();
 
             /* ==========================================================================
                6. Project Overview Tech Stack Hover Interaction
