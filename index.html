@@ -1790,23 +1790,49 @@
           gap: 14px;
         }
 
-        .mini-user-card {
-          padding: 12px 16px;
-          background: rgba(255, 255, 255, 0.01);
-          border: 1px solid rgba(255, 255, 255, 0.03);
-          border-radius: 8px;
+        .team-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 16px;
+          margin-bottom: 20px;
         }
 
+        .mini-user-card {
+          padding: 16px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 16px;
+          min-height: 150px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .team-card-header {
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          padding: 10px 12px;
+          border-radius: 12px;
+          width: fit-content;
+          background: rgba(167, 139, 250, 0.12);
+          color: var(--accent-purple);
+        }
+
+        .team-card-header.highlight-purple { background: rgba(167, 139, 250, 0.14); color: var(--accent-purple); }
+        .team-card-header.highlight-orange { background: rgba(249, 115, 22, 0.14); color: #f97316; }
+
         .mini-user-card h5 {
-          font-size: 0.9rem;
+          font-size: 1rem;
           margin-bottom: 4px;
         }
 
         .mini-user-card p {
-          font-size: 0.8rem;
-          line-height: 1.4;
+          font-size: 0.85rem;
+          line-height: 1.5;
           color: var(--text-gray);
         }
+
+
 
         /* Interactive Stack Section */
         .tech-stack-row-section {
@@ -3824,6 +3850,41 @@ module.exports = router;</code></pre>
                         <p>
                             Manual complaint handling at KLE Tech leads to delays, lost grievances, and minimal transparency. Paper-based or verbal submissions often disappear without a record, leaving students and faculty without confirmation or follow-up. The CMS replaces this process with a secure, auditable portal that preserves anonymity when needed and ensures every grievance is tracked to resolution.
                         </p>
+                    </div>
+
+                    <div class="doc-item-card full-width border-purple">
+                        <div class="doc-card-title-bar">
+                            <i data-lucide="users" class="text-cyan"></i>
+                            <h4>Project Team</h4>
+                        </div>
+                        <div class="team-cards-grid">
+                            <div class="mini-user-card">
+                                <div class="team-card-header highlight-purple">DK</div>
+                                <h5>Dron G Kambali</h5>
+                                <p>USN: 01FE24BCS141<br>Roll No: 239</p>
+                            </div>
+                            <div class="mini-user-card">
+                                <div class="team-card-header text-purple">PI</div>
+                                <h5>Pramod S Indi</h5>
+                                <p>USN: 01FE24BCS148<br>Roll No: 246</p>
+                            </div>
+                            <div class="mini-user-card">
+                                <div class="team-card-header text-cyan">CS</div>
+                                <h5>Chinmay B Sabarad</h5>
+                                <p>USN: 01FE24BCS201<br>Roll No: 259</p>
+                            </div>
+                            <div class="mini-user-card">
+                                <div class="team-card-header highlight-orange">AS</div>
+                                <h5>Amogh Samji</h5>
+                                <p>USN: 01FE24BCS193<br>Roll No: 253</p>
+                            </div>
+                            <div class="mini-user-card">
+                                <div class="team-card-header text-cyan">BK</div>
+                                <h5>BHEEMANGOUDA</h5>
+                                <p>USN: 01FE24BCS149<br>Roll No: 247</p>
+                            </div>
+                        </div>
+                        <a href="https://kle-cms-437414717800.asia-southeast1.run.app/" target="_blank" rel="noopener noreferrer" class="learn-more-link">View Live Project <i data-lucide="arrow-up-right"></i></a>
                     </div>
 
                     <div class="doc-item-card full-width border-purple">
